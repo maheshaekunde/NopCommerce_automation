@@ -1,0 +1,12 @@
+# Registration Functionality
+link_registration="//a[normalize-space()='Register']"
+rdo_btn_gender_male="//input[@id='gender-male']"
+txt_firstname="//input[@id='FirstName']"
+txt_lastname="//input[@id='LastName']"
+txt_email="//input[@id='Email']"
+txt_password="//input[@id='Password']"
+txt_confirm_password="//input[@id='ConfirmPassword']"
+btn_register="//button[@id='register-button']"
+successful_message="//div[normalize-space()='Your registration completed']"
+btn_continue="//a[normalize-space()='Continue']"
+txt_myaccount="//a[@class='ico-account']"

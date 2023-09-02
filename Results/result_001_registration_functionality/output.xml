@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.1.1 (Python 3.11.3 on win32)" generated="20230902 19:53:45.449" rpa="false" schemaversion="4">
+<suite id="s1" name="Test Suite Registration Functionality" source="D:\files\Nopcommerce\NopCommerce_automation\TestSuits\test_suite_registration_functionality.robot">
+<kw name="Open Chrome Browser" library="resource_browsers" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${url}</arg>
+<arg>${browser}[0]</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20230902 19:53:45.765" level="INFO">Opening browser 'chrome' to base url 'https://demo.nopcommerce.com/'.</msg>
+<status status="PASS" starttime="20230902 19:53:45.765" endtime="20230902 19:53:49.582"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20230902 19:53:49.582" endtime="20230902 19:53:49.718"/>
+</kw>
+<kw name="Set Selenium Implicit Wait" library="SeleniumLibrary">
+<arg>5s</arg>
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<status status="PASS" starttime="20230902 19:53:49.719" endtime="20230902 19:53:49.721"/>
+</kw>
+<kw name="Set Selenium Speed" library="SeleniumLibrary">
+<arg>1s</arg>
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<status status="PASS" starttime="20230902 19:53:49.721" endtime="20230902 19:53:49.721"/>
+</kw>
+<status status="PASS" starttime="20230902 19:53:45.764" endtime="20230902 19:53:49.721"/>
+</kw>
+<test id="s1-t1" name="TC 001" line="11">
+<kw name="Validate Registering an Account by providing only the mandatory fields">
+<kw name="Click on 'Register' link" library="resource_registration_functionality">
+<doc>User can click on Registration link which is located on header part of home page
+After clicking on Registration page will open.</doc>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${link_registration}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230902 19:53:49.723" level="INFO">Clicking element '//a[normalize-space()='Register']'.</msg>
+<status status="PASS" starttime="20230902 19:53:49.723" endtime="20230902 19:53:53.316"/>
+</kw>
+<status status="PASS" starttime="20230902 19:53:49.723" endtime="20230902 19:53:53.317"/>
+</kw>
+<kw name="Enter Firstname" library="resource_registration_functionality">
+<arg>Elon</arg>
+<doc>Entering First Name as Elon</doc>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${txt_firstname}</arg>
+<arg>${fistname}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230902 19:53:53.323" level="INFO">Typing text 'Elon' into text field '//input[@id='FirstName']'.</msg>
+<status status="PASS" starttime="20230902 19:53:53.320" endtime="20230902 19:53:56.850"/>
+</kw>
+<status status="PASS" starttime="20230902 19:53:53.318" endtime="20230902 19:53:56.850"/>
+</kw>
+<kw name="Enter Lastname" library="resource_registration_functionality">
+<arg>Musk</arg>
+<doc>Entering Lastname as Musk</doc>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${txt_lastname}</arg>
+<arg>${lastname}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230902 19:53:56.850" level="INFO">Typing text 'Musk' into text field '//input[@id='LastName']'.</msg>
+<status status="PASS" starttime="20230902 19:53:56.850" endtime="20230902 19:54:00.408"/>
+</kw>
+<status status="PASS" starttime="20230902 19:53:56.850" endtime="20230902 19:54:00.408"/>
+</kw>
+<kw name="Enter Email" library="resource_registration_functionality">
+<arg>elonmusk8@gmail.com</arg>
+<doc>Entering Email Address as elonmusk@gmail.com</doc>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${txt_email}</arg>
+<arg>${email}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230902 19:54:00.413" level="INFO">Typing text 'elonmusk8@gmail.com' into text field '//input[@id='Email']'.</msg>
+<status status="PASS" starttime="20230902 19:54:00.412" endtime="20230902 19:54:03.975"/>
+</kw>
+<status status="PASS" starttime="20230902 19:54:00.409" endtime="20230902 19:54:03.976"/>
+</kw>
+<kw name="Enter Password" library="resource_registration_functionality">
+<arg>elon@123</arg>
+<doc>Entering passwords as elon@123</doc>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${txt_password}</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230902 19:54:03.982" level="INFO">Typing text 'elon@123' into text field '//input[@id='Password']'.</msg>
+<status status="PASS" starttime="20230902 19:54:03.979" endtime="20230902 19:54:07.214"/>
+</kw>
+<status status="PASS" starttime="20230902 19:54:03.978" endtime="20230902 19:54:07.214"/>
+</kw>
+<kw name="Enter Confirm Password" library="resource_registration_functionality">
+<arg>elon@123</arg>
+<doc>Entering confirm password as elon@123</doc>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${txt_confirm_password}</arg>
+<arg>${confim_password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230902 19:54:07.216" level="INFO">Typing text 'elon@123' into text field '//input[@id='ConfirmPassword']'.</msg>
+<status status="PASS" starttime="20230902 19:54:07.215" endtime="20230902 19:54:10.461"/>
+</kw>
+<status status="PASS" starttime="20230902 19:54:07.214" endtime="20230902 19:54:10.461"/>
+</kw>
+<kw name="Click on Register button" library="resource_registration_functionality">
+<doc>Clicking on register button, User should be logged in, navigate to register page and
+'Your registration Completed' message should be displayed on the page.</doc>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${btn_register}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230902 19:54:10.461" level="INFO">Clicking element '//button[@id='register-button']'.</msg>
+<status status="PASS" starttime="20230902 19:54:10.461" endtime="20230902 19:54:14.500"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>3</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230902 19:54:17.501" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20230902 19:54:14.500" endtime="20230902 19:54:17.501"/>
+</kw>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<var>${message}</var>
+<arg>page should contain element</arg>
+<arg>${successful_message}</arg>
+<arg>Your registration Completed</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<kw name="Page Should Contain Element" library="SeleniumLibrary">
+<arg>${successful_message}</arg>
+<arg>Your registration Completed</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<msg timestamp="20230902 19:54:18.573" level="INFO">Current page contains element '//div[normalize-space()='Your registration completed']'.</msg>
+<status status="PASS" starttime="20230902 19:54:17.502" endtime="20230902 19:54:18.573"/>
+</kw>
+<msg timestamp="20230902 19:54:18.575" level="INFO">${message} = True</msg>
+<status status="PASS" starttime="20230902 19:54:17.502" endtime="20230902 19:54:18.575"/>
+</kw>
+<if>
+<branch type="IF" condition="'${message}' == 'True'">
+<kw name="Log" library="BuiltIn">
+<arg>Registration successful</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20230902 19:54:18.575" level="INFO">Registration successful</msg>
+<status status="PASS" starttime="20230902 19:54:18.575" endtime="20230902 19:54:18.575"/>
+</kw>
+<status status="PASS" starttime="20230902 19:54:18.575" endtime="20230902 19:54:18.575"/>
+</branch>
+<branch type="ELSE">
+<kw name="Log" library="BuiltIn">
+<arg>Registration unsuccessful</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" starttime="20230902 19:54:18.583" endtime="20230902 19:54:18.584"/>
+</kw>
+<status status="NOT RUN" starttime="20230902 19:54:18.575" endtime="20230902 19:54:18.584"/>
+</branch>
+<status status="PASS" starttime="20230902 19:54:18.575" endtime="20230902 19:54:18.584"/>
+</if>
+<status status="PASS" starttime="20230902 19:54:10.461" endtime="20230902 19:54:18.585"/>
+</kw>
+<kw name="Click on 'Continue' button" library="resource_registration_functionality">
+<doc>After successful registration click on 'continue' button which navigate to
+'My Account' page and confirm email should be sent to registered email address.</doc>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${btn_continue}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230902 19:54:18.590" level="INFO">Clicking element '//a[normalize-space()='Continue']'.</msg>
+<status status="PASS" starttime="20230902 19:54:18.587" endtime="20230902 19:54:21.515"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230902 19:54:23.516" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20230902 19:54:21.515" endtime="20230902 19:54:23.516"/>
+</kw>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<var>${myacount}</var>
+<arg>page should contain element</arg>
+<arg>${txt_myaccount}</arg>
+<arg>My account</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<kw name="Page Should Contain Element" library="SeleniumLibrary">
+<arg>${txt_myaccount}</arg>
+<arg>My account</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<msg timestamp="20230902 19:54:32.388" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-1.png"&gt;&lt;img src="selenium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg timestamp="20230902 19:54:32.389" level="FAIL">My account</msg>
+<status status="FAIL" starttime="20230902 19:54:23.520" endtime="20230902 19:54:32.392"/>
+</kw>
+<msg timestamp="20230902 19:54:32.392" level="INFO">${myacount} = False</msg>
+<status status="PASS" starttime="20230902 19:54:23.518" endtime="20230902 19:54:32.392"/>
+</kw>
+<if>
+<branch type="IF" condition="'${myacount}' == 'True'">
+<kw name="Log" library="BuiltIn">
+<arg>Navigated to My account page.</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" starttime="20230902 19:54:32.392" endtime="20230902 19:54:32.392"/>
+</kw>
+<status status="NOT RUN" starttime="20230902 19:54:32.392" endtime="20230902 19:54:32.392"/>
+</branch>
+<branch type="ELSE">
+<kw name="Log" library="BuiltIn">
+<arg>Navigation to My account page is failed</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20230902 19:54:32.392" level="INFO">Navigation to My account page is failed</msg>
+<status status="PASS" starttime="20230902 19:54:32.392" endtime="20230902 19:54:32.392"/>
+</kw>
+<status status="PASS" starttime="20230902 19:54:32.392" endtime="20230902 19:54:32.392"/>
+</branch>
+<status status="PASS" starttime="20230902 19:54:32.392" endtime="20230902 19:54:32.392"/>
+</if>
+<status status="PASS" starttime="20230902 19:54:18.586" endtime="20230902 19:54:32.392"/>
+</kw>
+<status status="PASS" starttime="20230902 19:53:49.722" endtime="20230902 19:54:32.392"/>
+</kw>
+<doc>Testcase 001 to Validate Registering an Account by providing only the mandatory fields</doc>
+<tag>Smoke testing</tag>
+<status status="PASS" starttime="20230902 19:53:49.721" endtime="20230902 19:54:32.394"/>
+</test>
+<kw name="Close My Browser" library="resource_browsers" type="TEARDOWN">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20230902 19:54:32.396" endtime="20230902 19:54:35.526"/>
+</kw>
+<status status="PASS" starttime="20230902 19:54:32.396" endtime="20230902 19:54:35.527"/>
+</kw>
+<doc>This is Test suite file to execute test cases for Registration Functionality</doc>
+<status status="PASS" starttime="20230902 19:53:45.457" endtime="20230902 19:54:35.528"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="1" fail="0" skip="0">Smoke testing</stat>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Test Suite Registration Functionality">Test Suite Registration Functionality</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
