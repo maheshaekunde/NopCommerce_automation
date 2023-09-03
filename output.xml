@@ -1,62 +1,162 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 6.1.1 (Python 3.11.3 on win32)" generated="20230902 14:26:51.579" rpa="false" schemaversion="4">
+<robot generator="Robot 6.1.1 (Python 3.11.3 on win32)" generated="20230903 15:12:51.754" rpa="false" schemaversion="4">
 <suite id="s1" name="Test Suite Registration Functionality" source="D:\files\Nopcommerce\NopCommerce_automation\TestSuits\test_suite_registration_functionality.robot">
 <kw name="Open Chrome Browser" library="resource_browsers" type="SETUP">
 <kw name="Open Browser" library="SeleniumLibrary">
 <arg>${url}</arg>
 <arg>${browser}[0]</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<msg timestamp="20230902 14:26:51.798" level="INFO">Opening browser 'chrome' to base url 'https://demo.nopcommerce.com/'.</msg>
-<status status="PASS" starttime="20230902 14:26:51.797" endtime="20230902 14:26:54.789"/>
+<msg timestamp="20230903 15:12:51.997" level="INFO">Opening browser 'chrome' to base url 'https://demo.nopcommerce.com/'.</msg>
+<status status="PASS" starttime="20230903 15:12:51.996" endtime="20230903 15:12:58.814"/>
 </kw>
 <kw name="Maximize Browser Window" library="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" starttime="20230902 14:26:54.789" endtime="20230902 14:26:54.913"/>
+<status status="PASS" starttime="20230903 15:12:58.814" endtime="20230903 15:12:59.086"/>
 </kw>
 <kw name="Set Selenium Implicit Wait" library="SeleniumLibrary">
-<arg>5</arg>
+<arg>5s</arg>
 <doc>Sets the implicit wait value used by Selenium.</doc>
-<status status="PASS" starttime="20230902 14:26:54.913" endtime="20230902 14:26:54.914"/>
+<status status="PASS" starttime="20230903 15:12:59.086" endtime="20230903 15:12:59.089"/>
 </kw>
-<status status="PASS" starttime="20230902 14:26:51.797" endtime="20230902 14:26:54.914"/>
+<kw name="Set Selenium Speed" library="SeleniumLibrary">
+<arg>1s</arg>
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<status status="PASS" starttime="20230903 15:12:59.089" endtime="20230903 15:12:59.089"/>
 </kw>
-<test id="s1-t1" name="TC 001" line="11">
-<kw name="Validate Registering an Account by providing only the mandatory fields">
+<status status="PASS" starttime="20230903 15:12:51.996" endtime="20230903 15:12:59.089"/>
+</kw>
+<test id="s1-t1" name="TC 007" line="43">
+<kw name="Validate the Registering an Account by entering different password in 'Password' fields.">
 <kw name="Click on 'Register' link" library="resource_registration_functionality">
 <doc>User can click on Registration link which is located on header part of home page
 After clicking on Registration page will open.</doc>
 <kw name="Click Element" library="SeleniumLibrary">
 <arg>${link_registration}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20230902 14:26:54.917" level="INFO">Clicking element '//a[normalize-space()='Register']'.</msg>
-<status status="PASS" starttime="20230902 14:26:54.916" endtime="20230902 14:26:56.454"/>
+<msg timestamp="20230903 15:12:59.098" level="INFO">Clicking element '//a[normalize-space()='Register']'.</msg>
+<status status="PASS" starttime="20230903 15:12:59.096" endtime="20230903 15:13:02.451"/>
 </kw>
-<status status="PASS" starttime="20230902 14:26:54.915" endtime="20230902 14:26:56.455"/>
+<status status="PASS" starttime="20230903 15:12:59.096" endtime="20230903 15:13:02.452"/>
 </kw>
-<status status="PASS" starttime="20230902 14:26:54.915" endtime="20230902 14:26:56.455"/>
+<kw name="Enter Firstname" library="resource_registration_functionality">
+<arg>john</arg>
+<doc>Entering First Name as Elon</doc>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${txt_firstname}</arg>
+<arg>${fistname}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230903 15:13:02.453" level="INFO">Typing text 'john' into text field '//input[@id='FirstName']'.</msg>
+<status status="PASS" starttime="20230903 15:13:02.453" endtime="20230903 15:13:05.770"/>
 </kw>
-<tag>Smoke testing</tag>
-<status status="PASS" starttime="20230902 14:26:54.914" endtime="20230902 14:26:56.459"/>
+<status status="PASS" starttime="20230903 15:13:02.453" endtime="20230903 15:13:05.770"/>
+</kw>
+<kw name="Enter Lastname" library="resource_registration_functionality">
+<arg>cena</arg>
+<doc>Entering Lastname as Musk</doc>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${txt_lastname}</arg>
+<arg>${lastname}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230903 15:13:05.770" level="INFO">Typing text 'cena' into text field '//input[@id='LastName']'.</msg>
+<status status="PASS" starttime="20230903 15:13:05.770" endtime="20230903 15:13:09.031"/>
+</kw>
+<status status="PASS" starttime="20230903 15:13:05.770" endtime="20230903 15:13:09.031"/>
+</kw>
+<kw name="Enter Email" library="resource_registration_functionality">
+<arg>johnce@gmail.com</arg>
+<doc>Entering Email Address as elonmusk@gmail.com</doc>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${txt_email}</arg>
+<arg>${email}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230903 15:13:09.031" level="INFO">Typing text 'johnce@gmail.com' into text field '//input[@id='Email']'.</msg>
+<status status="PASS" starttime="20230903 15:13:09.031" endtime="20230903 15:13:12.212"/>
+</kw>
+<status status="PASS" starttime="20230903 15:13:09.031" endtime="20230903 15:13:12.213"/>
+</kw>
+<kw name="Enter Password" library="resource_registration_functionality">
+<arg>john@123</arg>
+<doc>Entering passwords as elon@123</doc>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${txt_password}</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230903 15:13:12.213" level="INFO">Typing text 'john@123' into text field '//input[@id='Password']'.</msg>
+<status status="PASS" starttime="20230903 15:13:12.213" endtime="20230903 15:13:15.367"/>
+</kw>
+<status status="PASS" starttime="20230903 15:13:12.213" endtime="20230903 15:13:15.367"/>
+</kw>
+<kw name="Enter Confirm Password" library="resource_registration_functionality">
+<arg>john@abcdefghij</arg>
+<doc>Entering confirm password as elon@123</doc>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${txt_confirm_password}</arg>
+<arg>${confim_password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230903 15:13:15.368" level="INFO">Typing text 'john@abcdefghij' into text field '//input[@id='ConfirmPassword']'.</msg>
+<status status="PASS" starttime="20230903 15:13:15.368" endtime="20230903 15:13:18.544"/>
+</kw>
+<status status="PASS" starttime="20230903 15:13:15.367" endtime="20230903 15:13:18.544"/>
+</kw>
+<kw name="Display Warning Message for both Passwords not matched" library="resource_registration_functionality">
+<doc>Varify when user entering password and cofirm password field is not same and Error message
+'The password and confirmation password do not match.' should displayed.</doc>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${txt}</var>
+<arg>${warning_pass_not_matched}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20230903 15:13:25.851" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-21.png"&gt;&lt;img src="selenium-screenshot-21.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg timestamp="20230903 15:13:25.852" level="FAIL">Element with locator '//span[@id='ConfirmPassword-error']' not found.</msg>
+<status status="FAIL" starttime="20230903 15:13:18.544" endtime="20230903 15:13:25.852"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${exp_txt}</var>
+<arg>The password and confirmation password do not match.</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" starttime="20230903 15:13:25.852" endtime="20230903 15:13:25.852"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${txt}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" starttime="20230903 15:13:25.852" endtime="20230903 15:13:25.852"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>'${txt}'</arg>
+<arg>==</arg>
+<arg>'${exp_txt}'</arg>
+<arg>log</arg>
+<arg>The password and confirmation password do not match displayed</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="NOT RUN" starttime="20230903 15:13:25.852" endtime="20230903 15:13:25.852"/>
+</kw>
+<status status="FAIL" starttime="20230903 15:13:18.544" endtime="20230903 15:13:25.852"/>
+</kw>
+<status status="FAIL" starttime="20230903 15:12:59.096" endtime="20230903 15:13:25.852"/>
+</kw>
+<doc>Validate the Registering an Account by entering different password in 'Password' fields.
+password= elon@123 and confirm password= elon@abc  both password are different so testcase should fail</doc>
+<tag>Sanity testing</tag>
+<status status="FAIL" starttime="20230903 15:12:59.091" endtime="20230903 15:13:25.857">Element with locator '//span[@id='ConfirmPassword-error']' not found.</status>
 </test>
 <kw name="Close My Browser" library="resource_browsers" type="TEARDOWN">
 <kw name="Close Browser" library="SeleniumLibrary">
 <doc>Closes the current browser.</doc>
-<status status="PASS" starttime="20230902 14:26:56.465" endtime="20230902 14:26:58.678"/>
+<status status="PASS" starttime="20230903 15:13:25.864" endtime="20230903 15:13:29.015"/>
 </kw>
-<status status="PASS" starttime="20230902 14:26:56.464" endtime="20230902 14:26:58.678"/>
+<status status="PASS" starttime="20230903 15:13:25.864" endtime="20230903 15:13:29.015"/>
 </kw>
-<doc>This is Test suite file to execute test cases.</doc>
-<status status="PASS" starttime="20230902 14:26:51.581" endtime="20230902 14:26:58.678"/>
+<doc>This is Test suite file to execute test cases for Registration Functionality</doc>
+<status status="FAIL" starttime="20230903 15:12:51.764" endtime="20230903 15:13:29.016"/>
 </suite>
 <statistics>
 <total>
-<stat pass="1" fail="0" skip="0">All Tests</stat>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
 </total>
 <tag>
-<stat pass="1" fail="0" skip="0">Smoke testing</stat>
+<stat pass="0" fail="1" skip="0">Sanity testing</stat>
 </tag>
 <suite>
-<stat pass="1" fail="0" skip="0" id="s1" name="Test Suite Registration Functionality">Test Suite Registration Functionality</stat>
+<stat pass="0" fail="1" skip="0" id="s1" name="Test Suite Registration Functionality">Test Suite Registration Functionality</stat>
 </suite>
 </statistics>
 <errors>
