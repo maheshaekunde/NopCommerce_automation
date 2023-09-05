@@ -1,773 +1,168 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 6.1.1 (Python 3.11.3 on win32)" generated="20230903 02:05:47.772" rpa="false" schemaversion="4">
+<robot generator="Robot 6.1.1 (Python 3.11.3 on win32)" generated="20230905 19:29:42.157" rpa="false" schemaversion="4">
 <suite id="s1" name="Test Suite Registration Functionality" source="D:\files\Nopcommerce\NopCommerce_automation\TestSuits\test_suite_registration_functionality.robot">
 <kw name="Open Chrome Browser" library="resource_browsers" type="SETUP">
 <kw name="Open Browser" library="SeleniumLibrary">
 <arg>${url}</arg>
 <arg>${browser}[0]</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<msg timestamp="20230903 02:05:48.158" level="INFO">Opening browser 'chrome' to base url 'https://demo.nopcommerce.com/'.</msg>
-<status status="PASS" starttime="20230903 02:05:48.158" endtime="20230903 02:05:53.397"/>
+<msg timestamp="20230905 19:29:42.398" level="INFO">Opening browser 'chrome' to base url 'https://demo.nopcommerce.com/'.</msg>
+<status status="PASS" starttime="20230905 19:29:42.398" endtime="20230905 19:29:46.114"/>
 </kw>
 <kw name="Maximize Browser Window" library="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" starttime="20230903 02:05:53.397" endtime="20230903 02:05:53.543"/>
+<status status="PASS" starttime="20230905 19:29:46.114" endtime="20230905 19:29:46.246"/>
 </kw>
 <kw name="Set Selenium Implicit Wait" library="SeleniumLibrary">
 <arg>5s</arg>
 <doc>Sets the implicit wait value used by Selenium.</doc>
-<status status="PASS" starttime="20230903 02:05:53.543" endtime="20230903 02:05:53.543"/>
+<status status="PASS" starttime="20230905 19:29:46.246" endtime="20230905 19:29:46.249"/>
 </kw>
 <kw name="Set Selenium Speed" library="SeleniumLibrary">
 <arg>1s</arg>
 <doc>Sets the delay that is waited after each Selenium command.</doc>
-<status status="PASS" starttime="20230903 02:05:53.543" endtime="20230903 02:05:53.554"/>
+<status status="PASS" starttime="20230905 19:29:46.249" endtime="20230905 19:29:46.249"/>
 </kw>
-<status status="PASS" starttime="20230903 02:05:48.158" endtime="20230903 02:05:53.554"/>
+<status status="PASS" starttime="20230905 19:29:42.397" endtime="20230905 19:29:46.250"/>
 </kw>
-<test id="s1-t1" name="TC 001" line="11">
-<kw name="Validate Registering an Account by providing only the mandatory fields">
+<test id="s1-t1" name="TC 007" line="43">
+<kw name="Validate the Registering an Account by entering different password in 'Password' fields.">
 <kw name="Click on 'Register' link" library="resource_registration_functionality">
 <doc>User can click on Registration link which is located on header part of home page
 After clicking on Registration page will open.</doc>
 <kw name="Click Element" library="SeleniumLibrary">
 <arg>${link_registration}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20230903 02:05:53.555" level="INFO">Clicking element '//a[normalize-space()='Register']'.</msg>
-<status status="PASS" starttime="20230903 02:05:53.555" endtime="20230903 02:05:56.954"/>
+<msg timestamp="20230905 19:29:46.259" level="INFO">Clicking element '//a[normalize-space()='Register']'.</msg>
+<status status="PASS" starttime="20230905 19:29:46.259" endtime="20230905 19:29:49.801"/>
 </kw>
-<status status="PASS" starttime="20230903 02:05:53.555" endtime="20230903 02:05:56.954"/>
+<status status="PASS" starttime="20230905 19:29:46.259" endtime="20230905 19:29:49.801"/>
 </kw>
 <kw name="Enter Firstname" library="resource_registration_functionality">
-<arg>Elon</arg>
+<arg>john</arg>
 <doc>Entering First Name as Elon</doc>
 <kw name="Input Text" library="SeleniumLibrary">
 <arg>${txt_firstname}</arg>
 <arg>${fistname}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20230903 02:05:56.956" level="INFO">Typing text 'Elon' into text field '//input[@id='FirstName']'.</msg>
-<status status="PASS" starttime="20230903 02:05:56.955" endtime="20230903 02:06:00.172"/>
+<msg timestamp="20230905 19:29:49.801" level="INFO">Typing text 'john' into text field '//input[@id='FirstName']'.</msg>
+<status status="PASS" starttime="20230905 19:29:49.801" endtime="20230905 19:29:53.140"/>
 </kw>
-<status status="PASS" starttime="20230903 02:05:56.954" endtime="20230903 02:06:00.172"/>
+<status status="PASS" starttime="20230905 19:29:49.801" endtime="20230905 19:29:53.140"/>
 </kw>
 <kw name="Enter Lastname" library="resource_registration_functionality">
-<arg>Musk</arg>
+<arg>cena</arg>
 <doc>Entering Lastname as Musk</doc>
 <kw name="Input Text" library="SeleniumLibrary">
 <arg>${txt_lastname}</arg>
 <arg>${lastname}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20230903 02:06:00.172" level="INFO">Typing text 'Musk' into text field '//input[@id='LastName']'.</msg>
-<status status="PASS" starttime="20230903 02:06:00.172" endtime="20230903 02:06:03.371"/>
+<msg timestamp="20230905 19:29:53.140" level="INFO">Typing text 'cena' into text field '//input[@id='LastName']'.</msg>
+<status status="PASS" starttime="20230905 19:29:53.140" endtime="20230905 19:29:56.610"/>
 </kw>
-<status status="PASS" starttime="20230903 02:06:00.172" endtime="20230903 02:06:03.371"/>
+<status status="PASS" starttime="20230905 19:29:53.140" endtime="20230905 19:29:56.610"/>
 </kw>
 <kw name="Enter Email" library="resource_registration_functionality">
-<arg>elonmusk12@gmail.com</arg>
+<arg>johnce11@gmail.com</arg>
 <doc>Entering Email Address as elonmusk@gmail.com</doc>
 <kw name="Input Text" library="SeleniumLibrary">
 <arg>${txt_email}</arg>
 <arg>${email}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20230903 02:06:03.371" level="INFO">Typing text 'elonmusk12@gmail.com' into text field '//input[@id='Email']'.</msg>
-<status status="PASS" starttime="20230903 02:06:03.371" endtime="20230903 02:06:06.578"/>
+<msg timestamp="20230905 19:29:56.610" level="INFO">Typing text 'johnce11@gmail.com' into text field '//input[@id='Email']'.</msg>
+<status status="PASS" starttime="20230905 19:29:56.610" endtime="20230905 19:30:00.113"/>
 </kw>
-<status status="PASS" starttime="20230903 02:06:03.371" endtime="20230903 02:06:06.578"/>
+<status status="PASS" starttime="20230905 19:29:56.610" endtime="20230905 19:30:00.113"/>
 </kw>
 <kw name="Enter Password" library="resource_registration_functionality">
-<arg>elon@123</arg>
+<arg>john@123</arg>
 <doc>Entering passwords as elon@123</doc>
 <kw name="Input Text" library="SeleniumLibrary">
 <arg>${txt_password}</arg>
 <arg>${password}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20230903 02:06:06.578" level="INFO">Typing text 'elon@123' into text field '//input[@id='Password']'.</msg>
-<status status="PASS" starttime="20230903 02:06:06.578" endtime="20230903 02:06:09.734"/>
+<msg timestamp="20230905 19:30:00.113" level="INFO">Typing text 'john@123' into text field '//input[@id='Password']'.</msg>
+<status status="PASS" starttime="20230905 19:30:00.113" endtime="20230905 19:30:03.547"/>
 </kw>
-<status status="PASS" starttime="20230903 02:06:06.578" endtime="20230903 02:06:09.734"/>
+<status status="PASS" starttime="20230905 19:30:00.113" endtime="20230905 19:30:03.548"/>
 </kw>
 <kw name="Enter Confirm Password" library="resource_registration_functionality">
-<arg>elon@123</arg>
+<arg>john@abcdefghij</arg>
 <doc>Entering confirm password as elon@123</doc>
 <kw name="Input Text" library="SeleniumLibrary">
 <arg>${txt_confirm_password}</arg>
 <arg>${confim_password}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20230903 02:06:09.735" level="INFO">Typing text 'elon@123' into text field '//input[@id='ConfirmPassword']'.</msg>
-<status status="PASS" starttime="20230903 02:06:09.735" endtime="20230903 02:06:12.981"/>
+<msg timestamp="20230905 19:30:03.549" level="INFO">Typing text 'john@abcdefghij' into text field '//input[@id='ConfirmPassword']'.</msg>
+<status status="PASS" starttime="20230905 19:30:03.549" endtime="20230905 19:30:06.889"/>
 </kw>
-<status status="PASS" starttime="20230903 02:06:09.734" endtime="20230903 02:06:12.981"/>
+<status status="PASS" starttime="20230905 19:30:03.549" endtime="20230905 19:30:06.889"/>
 </kw>
-<kw name="Click on Register button" library="resource_registration_functionality">
-<doc>Clicking on register button, User should be logged in, navigate to register page and
-'Your registration Completed' message should be displayed on the page.</doc>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${btn_register}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20230903 02:06:12.983" level="INFO">Clicking element '//button[@id='register-button']'.</msg>
-<status status="PASS" starttime="20230903 02:06:12.981" endtime="20230903 02:06:16.659"/>
-</kw>
-<kw name="Sleep" library="BuiltIn">
-<arg>3</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20230903 02:06:19.660" level="INFO">Slept 3 seconds</msg>
-<status status="PASS" starttime="20230903 02:06:16.659" endtime="20230903 02:06:19.660"/>
-</kw>
-<kw name="Run Keyword And Return Status" library="BuiltIn">
-<var>${message}</var>
-<arg>page should contain element</arg>
-<arg>${successful_message}</arg>
-<arg>Your registration Completed</arg>
-<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
-<kw name="Page Should Contain Element" library="SeleniumLibrary">
-<arg>${successful_message}</arg>
-<arg>Your registration Completed</arg>
-<doc>Verifies that element ``locator`` is found on the current page.</doc>
-<msg timestamp="20230903 02:06:20.681" level="INFO">Current page contains element '//div[normalize-space()='Your registration completed']'.</msg>
-<status status="PASS" starttime="20230903 02:06:19.660" endtime="20230903 02:06:20.681"/>
-</kw>
-<msg timestamp="20230903 02:06:20.681" level="INFO">${message} = True</msg>
-<status status="PASS" starttime="20230903 02:06:19.660" endtime="20230903 02:06:20.681"/>
-</kw>
-<if>
-<branch type="IF" condition="'${message}' == 'True'">
-<kw name="Log" library="BuiltIn">
-<arg>Registration successful</arg>
-<doc>Logs the given message with the given level.</doc>
-<msg timestamp="20230903 02:06:20.682" level="INFO">Registration successful</msg>
-<status status="PASS" starttime="20230903 02:06:20.682" endtime="20230903 02:06:20.683"/>
-</kw>
-<status status="PASS" starttime="20230903 02:06:20.681" endtime="20230903 02:06:20.683"/>
-</branch>
-<branch type="ELSE">
-<kw name="Log" library="BuiltIn">
-<arg>Registration unsuccessful</arg>
-<doc>Logs the given message with the given level.</doc>
-<status status="NOT RUN" starttime="20230903 02:06:20.683" endtime="20230903 02:06:20.683"/>
-</kw>
-<status status="NOT RUN" starttime="20230903 02:06:20.683" endtime="20230903 02:06:20.683"/>
-</branch>
-<status status="PASS" starttime="20230903 02:06:20.681" endtime="20230903 02:06:20.684"/>
-</if>
-<status status="PASS" starttime="20230903 02:06:12.981" endtime="20230903 02:06:20.684"/>
-</kw>
-<kw name="Click on 'Continue' button" library="resource_registration_functionality">
-<doc>After successful registration click on 'continue' button which navigate to
-'My Account' page and confirm email should be sent to registered email address.</doc>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${btn_continue}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20230903 02:06:20.686" level="INFO">Clicking element '//a[normalize-space()='Continue']'.</msg>
-<status status="PASS" starttime="20230903 02:06:20.685" endtime="20230903 02:06:23.313"/>
-</kw>
+<kw name="Display Warning Message for both Passwords not matched" library="resource_registration_functionality">
+<doc>Varify when user entering password and confirm password field is not same and Error message
+'The password and confirmation password do not match.' should displayed.</doc>
 <kw name="Sleep" library="BuiltIn">
 <arg>2</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20230903 02:06:25.313" level="INFO">Slept 2 seconds</msg>
-<status status="PASS" starttime="20230903 02:06:23.313" endtime="20230903 02:06:25.313"/>
+<msg timestamp="20230905 19:30:08.890" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20230905 19:30:06.890" endtime="20230905 19:30:08.890"/>
 </kw>
-<kw name="Run Keyword And Return Status" library="BuiltIn">
-<var>${myacount}</var>
-<arg>page should contain element</arg>
-<arg>${txt_myaccount}</arg>
-<arg>My account</arg>
-<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
-<kw name="Page Should Contain Element" library="SeleniumLibrary">
-<arg>${txt_myaccount}</arg>
-<arg>My account</arg>
-<doc>Verifies that element ``locator`` is found on the current page.</doc>
-<msg timestamp="20230903 02:06:33.846" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-11.png"&gt;&lt;img src="selenium-screenshot-11.png" width="800px"&gt;&lt;/a&gt;</msg>
-<msg timestamp="20230903 02:06:33.846" level="FAIL">My account</msg>
-<status status="FAIL" starttime="20230903 02:06:25.313" endtime="20230903 02:06:33.856"/>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${txt}</var>
+<arg>${warning_pass_not_matched}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20230905 19:30:16.176" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-16.png"&gt;&lt;img src="selenium-screenshot-16.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg timestamp="20230905 19:30:16.176" level="FAIL">Element with locator '//span[@id='ConfirmPassword-error']' not found.</msg>
+<status status="FAIL" starttime="20230905 19:30:08.890" endtime="20230905 19:30:16.179"/>
 </kw>
-<msg timestamp="20230903 02:06:33.856" level="INFO">${myacount} = False</msg>
-<status status="PASS" starttime="20230903 02:06:25.313" endtime="20230903 02:06:33.856"/>
+<kw name="Set Variable" library="BuiltIn">
+<var>${exp_txt}</var>
+<arg>The password and confirmation password do not match.</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" starttime="20230905 19:30:16.179" endtime="20230905 19:30:16.179"/>
 </kw>
-<if>
-<branch type="IF" condition="'${myacount}' == 'True'">
 <kw name="Log" library="BuiltIn">
-<arg>Navigated to My account page.</arg>
+<arg>${txt}</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="NOT RUN" starttime="20230903 02:06:33.856" endtime="20230903 02:06:33.856"/>
+<status status="NOT RUN" starttime="20230905 19:30:16.179" endtime="20230905 19:30:16.179"/>
 </kw>
-<status status="NOT RUN" starttime="20230903 02:06:33.856" endtime="20230903 02:06:33.856"/>
-</branch>
-<branch type="ELSE">
-<kw name="Log" library="BuiltIn">
-<arg>Navigation to My account page is failed</arg>
-<doc>Logs the given message with the given level.</doc>
-<msg timestamp="20230903 02:06:33.856" level="INFO">Navigation to My account page is failed</msg>
-<status status="PASS" starttime="20230903 02:06:33.856" endtime="20230903 02:06:33.856"/>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>'${txt}'</arg>
+<arg>==</arg>
+<arg>'${exp_txt}'</arg>
+<arg>log</arg>
+<arg>The password and confirmation password do not match displayed</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="NOT RUN" starttime="20230905 19:30:16.179" endtime="20230905 19:30:16.179"/>
 </kw>
-<status status="PASS" starttime="20230903 02:06:33.856" endtime="20230903 02:06:33.856"/>
-</branch>
-<status status="PASS" starttime="20230903 02:06:33.856" endtime="20230903 02:06:33.856"/>
-</if>
-<status status="PASS" starttime="20230903 02:06:20.684" endtime="20230903 02:06:33.856"/>
+<status status="FAIL" starttime="20230905 19:30:06.890" endtime="20230905 19:30:16.179"/>
 </kw>
-<status status="PASS" starttime="20230903 02:05:53.555" endtime="20230903 02:06:33.856"/>
+<status status="FAIL" starttime="20230905 19:29:46.252" endtime="20230905 19:30:16.179"/>
 </kw>
-<doc>Testcase 001 Validate Registering an Account by providing only the mandatory fields</doc>
-<tag>Smoke testing</tag>
-<status status="PASS" starttime="20230903 02:05:53.554" endtime="20230903 02:06:33.856"/>
-</test>
-<test id="s1-t2" name="TC 002" line="16">
-<kw name="Validate the Registering an account by providing all the fields">
-<kw name="Click on 'Register' link" library="resource_registration_functionality">
-<doc>User can click on Registration link which is located on header part of home page
-After clicking on Registration page will open.</doc>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${link_registration}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20230903 02:06:33.856" level="INFO">Clicking element '//a[normalize-space()='Register']'.</msg>
-<status status="PASS" starttime="20230903 02:06:33.856" endtime="20230903 02:06:36.350"/>
-</kw>
-<status status="PASS" starttime="20230903 02:06:33.856" endtime="20230903 02:06:36.350"/>
-</kw>
-<kw name="Select Gender Radio Button" library="resource_registration_functionality">
-<arg>M</arg>
-<doc>User should select gender radio button male or female</doc>
-<kw name="Page Should Contain Radio Button" library="SeleniumLibrary">
-<arg>${rdo_btn_gender_male}</arg>
-<doc>Verifies radio button ``locator`` is found from current page.</doc>
-<msg timestamp="20230903 02:06:39.395" level="INFO">Current page contains radio button '//input[@id='gender-male']'.</msg>
-<status status="PASS" starttime="20230903 02:06:36.350" endtime="20230903 02:06:39.395"/>
-</kw>
-<kw name="Select Radio Button" library="SeleniumLibrary">
-<arg>Gender</arg>
-<arg>${gender}</arg>
-<doc>Sets the radio button group ``group_name`` to ``value``.</doc>
-<msg timestamp="20230903 02:06:39.395" level="INFO">Selecting 'M' from radio button 'Gender'.</msg>
-<status status="PASS" starttime="20230903 02:06:39.395" endtime="20230903 02:06:42.491"/>
-</kw>
-<status status="PASS" starttime="20230903 02:06:36.350" endtime="20230903 02:06:42.491"/>
-</kw>
-<kw name="Enter Firstname" library="resource_registration_functionality">
-<arg>Elon</arg>
-<doc>Entering First Name as Elon</doc>
-<kw name="Input Text" library="SeleniumLibrary">
-<arg>${txt_firstname}</arg>
-<arg>${fistname}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20230903 02:06:42.491" level="INFO">Typing text 'Elon' into text field '//input[@id='FirstName']'.</msg>
-<status status="PASS" starttime="20230903 02:06:42.491" endtime="20230903 02:06:45.595"/>
-</kw>
-<status status="PASS" starttime="20230903 02:06:42.491" endtime="20230903 02:06:45.595"/>
-</kw>
-<kw name="Enter Lastname" library="resource_registration_functionality">
-<arg>Musk</arg>
-<doc>Entering Lastname as Musk</doc>
-<kw name="Input Text" library="SeleniumLibrary">
-<arg>${txt_lastname}</arg>
-<arg>${lastname}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20230903 02:06:45.595" level="INFO">Typing text 'Musk' into text field '//input[@id='LastName']'.</msg>
-<status status="PASS" starttime="20230903 02:06:45.595" endtime="20230903 02:06:48.721"/>
-</kw>
-<status status="PASS" starttime="20230903 02:06:45.595" endtime="20230903 02:06:48.721"/>
-</kw>
-<kw name="Select Date of birth from dropdown option" library="resource_registration_functionality">
-<arg>3</arg>
-<arg>September</arg>
-<arg>1993</arg>
-<doc>Selecting day option from date of birth dropdown menu</doc>
-<kw name="Page Should Contain Element" library="SeleniumLibrary">
-<arg>${dd_day}</arg>
-<doc>Verifies that element ``locator`` is found on the current page.</doc>
-<msg timestamp="20230903 02:06:49.735" level="INFO">Current page contains element '//select[@name='DateOfBirthDay']'.</msg>
-<status status="PASS" starttime="20230903 02:06:48.721" endtime="20230903 02:06:49.735"/>
-</kw>
-<kw name="Select From List By Label" library="SeleniumLibrary">
-<arg>DateOfBirthDay</arg>
-<arg>${day}</arg>
-<doc>Selects options from selection list ``locator`` by ``labels``.</doc>
-<msg timestamp="20230903 02:06:49.735" level="INFO">Selecting options from selection list 'DateOfBirthDay' by label 3.</msg>
-<status status="PASS" starttime="20230903 02:06:49.735" endtime="20230903 02:06:56.836"/>
-</kw>
-<kw name="Select From List By Label" library="SeleniumLibrary">
-<arg>DateOfBirthMonth</arg>
-<arg>${month}</arg>
-<doc>Selects options from selection list ``locator`` by ``labels``.</doc>
-<msg timestamp="20230903 02:06:56.836" level="INFO">Selecting options from selection list 'DateOfBirthMonth' by label September.</msg>
-<status status="PASS" starttime="20230903 02:06:56.836" endtime="20230903 02:07:03.928"/>
-</kw>
-<kw name="Select From List By Label" library="SeleniumLibrary">
-<arg>DateOfBirthYear</arg>
-<arg>${year}</arg>
-<doc>Selects options from selection list ``locator`` by ``labels``.</doc>
-<msg timestamp="20230903 02:07:03.928" level="INFO">Selecting options from selection list 'DateOfBirthYear' by label 1993.</msg>
-<status status="PASS" starttime="20230903 02:07:03.928" endtime="20230903 02:07:11.036"/>
-</kw>
-<status status="PASS" starttime="20230903 02:06:48.721" endtime="20230903 02:07:11.036"/>
-</kw>
-<kw name="Enter Email" library="resource_registration_functionality">
-<arg>elonmusk13@gmail.com</arg>
-<doc>Entering Email Address as elonmusk@gmail.com</doc>
-<kw name="Input Text" library="SeleniumLibrary">
-<arg>${txt_email}</arg>
-<arg>${email}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20230903 02:07:11.036" level="INFO">Typing text 'elonmusk13@gmail.com' into text field '//input[@id='Email']'.</msg>
-<status status="PASS" starttime="20230903 02:07:11.036" endtime="20230903 02:07:14.186"/>
-</kw>
-<status status="PASS" starttime="20230903 02:07:11.036" endtime="20230903 02:07:14.186"/>
-</kw>
-<kw name="Enter Company Name" library="resource_registration_functionality">
-<arg>Nvidia India</arg>
-<doc>Enter Company name as Nvidia India</doc>
-<kw name="Page Should Contain Element" library="SeleniumLibrary">
-<arg>${txt_company_name}</arg>
-<doc>Verifies that element ``locator`` is found on the current page.</doc>
-<msg timestamp="20230903 02:07:15.205" level="INFO">Current page contains element '//input[@id='Company']'.</msg>
-<status status="PASS" starttime="20230903 02:07:14.186" endtime="20230903 02:07:15.205"/>
-</kw>
-<kw name="Input Text" library="SeleniumLibrary">
-<arg>${txt_company_name}</arg>
-<arg>${company}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20230903 02:07:15.205" level="INFO">Typing text 'Nvidia India' into text field '//input[@id='Company']'.</msg>
-<status status="PASS" starttime="20230903 02:07:15.205" endtime="20230903 02:07:18.365"/>
-</kw>
-<status status="PASS" starttime="20230903 02:07:14.186" endtime="20230903 02:07:18.365"/>
-</kw>
-<kw name="Enter Password" library="resource_registration_functionality">
-<arg>elon@123</arg>
-<doc>Entering passwords as elon@123</doc>
-<kw name="Input Text" library="SeleniumLibrary">
-<arg>${txt_password}</arg>
-<arg>${password}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20230903 02:07:18.365" level="INFO">Typing text 'elon@123' into text field '//input[@id='Password']'.</msg>
-<status status="PASS" starttime="20230903 02:07:18.365" endtime="20230903 02:07:21.485"/>
-</kw>
-<status status="PASS" starttime="20230903 02:07:18.365" endtime="20230903 02:07:21.485"/>
-</kw>
-<kw name="Enter Confirm Password" library="resource_registration_functionality">
-<arg>elon@123</arg>
-<doc>Entering confirm password as elon@123</doc>
-<kw name="Input Text" library="SeleniumLibrary">
-<arg>${txt_confirm_password}</arg>
-<arg>${confim_password}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20230903 02:07:21.485" level="INFO">Typing text 'elon@123' into text field '//input[@id='ConfirmPassword']'.</msg>
-<status status="PASS" starttime="20230903 02:07:21.485" endtime="20230903 02:07:24.614"/>
-</kw>
-<status status="PASS" starttime="20230903 02:07:21.485" endtime="20230903 02:07:24.614"/>
-</kw>
-<kw name="Click on Register button" library="resource_registration_functionality">
-<doc>Clicking on register button, User should be logged in, navigate to register page and
-'Your registration Completed' message should be displayed on the page.</doc>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${btn_register}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20230903 02:07:24.614" level="INFO">Clicking element '//button[@id='register-button']'.</msg>
-<status status="PASS" starttime="20230903 02:07:24.614" endtime="20230903 02:07:29.035"/>
-</kw>
-<kw name="Sleep" library="BuiltIn">
-<arg>3</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20230903 02:07:32.035" level="INFO">Slept 3 seconds</msg>
-<status status="PASS" starttime="20230903 02:07:29.035" endtime="20230903 02:07:32.035"/>
-</kw>
-<kw name="Run Keyword And Return Status" library="BuiltIn">
-<var>${message}</var>
-<arg>page should contain element</arg>
-<arg>${successful_message}</arg>
-<arg>Your registration Completed</arg>
-<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
-<kw name="Page Should Contain Element" library="SeleniumLibrary">
-<arg>${successful_message}</arg>
-<arg>Your registration Completed</arg>
-<doc>Verifies that element ``locator`` is found on the current page.</doc>
-<msg timestamp="20230903 02:07:33.053" level="INFO">Current page contains element '//div[normalize-space()='Your registration completed']'.</msg>
-<status status="PASS" starttime="20230903 02:07:32.035" endtime="20230903 02:07:33.053"/>
-</kw>
-<msg timestamp="20230903 02:07:33.053" level="INFO">${message} = True</msg>
-<status status="PASS" starttime="20230903 02:07:32.035" endtime="20230903 02:07:33.053"/>
-</kw>
-<if>
-<branch type="IF" condition="'${message}' == 'True'">
-<kw name="Log" library="BuiltIn">
-<arg>Registration successful</arg>
-<doc>Logs the given message with the given level.</doc>
-<msg timestamp="20230903 02:07:33.054" level="INFO">Registration successful</msg>
-<status status="PASS" starttime="20230903 02:07:33.053" endtime="20230903 02:07:33.054"/>
-</kw>
-<status status="PASS" starttime="20230903 02:07:33.053" endtime="20230903 02:07:33.054"/>
-</branch>
-<branch type="ELSE">
-<kw name="Log" library="BuiltIn">
-<arg>Registration unsuccessful</arg>
-<doc>Logs the given message with the given level.</doc>
-<status status="NOT RUN" starttime="20230903 02:07:33.054" endtime="20230903 02:07:33.054"/>
-</kw>
-<status status="NOT RUN" starttime="20230903 02:07:33.054" endtime="20230903 02:07:33.054"/>
-</branch>
-<status status="PASS" starttime="20230903 02:07:33.053" endtime="20230903 02:07:33.054"/>
-</if>
-<status status="PASS" starttime="20230903 02:07:24.614" endtime="20230903 02:07:33.054"/>
-</kw>
-<kw name="Click on 'Continue' button" library="resource_registration_functionality">
-<doc>After successful registration click on 'continue' button which navigate to
-'My Account' page and confirm email should be sent to registered email address.</doc>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${btn_continue}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20230903 02:07:33.055" level="INFO">Clicking element '//a[normalize-space()='Continue']'.</msg>
-<status status="PASS" starttime="20230903 02:07:33.054" endtime="20230903 02:07:35.671"/>
-</kw>
-<kw name="Sleep" library="BuiltIn">
-<arg>2</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20230903 02:07:37.672" level="INFO">Slept 2 seconds</msg>
-<status status="PASS" starttime="20230903 02:07:35.671" endtime="20230903 02:07:37.672"/>
-</kw>
-<kw name="Run Keyword And Return Status" library="BuiltIn">
-<var>${myacount}</var>
-<arg>page should contain element</arg>
-<arg>${txt_myaccount}</arg>
-<arg>My account</arg>
-<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
-<kw name="Page Should Contain Element" library="SeleniumLibrary">
-<arg>${txt_myaccount}</arg>
-<arg>My account</arg>
-<doc>Verifies that element ``locator`` is found on the current page.</doc>
-<msg timestamp="20230903 02:07:46.133" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-12.png"&gt;&lt;img src="selenium-screenshot-12.png" width="800px"&gt;&lt;/a&gt;</msg>
-<msg timestamp="20230903 02:07:46.133" level="FAIL">My account</msg>
-<status status="FAIL" starttime="20230903 02:07:37.672" endtime="20230903 02:07:46.133"/>
-</kw>
-<msg timestamp="20230903 02:07:46.133" level="INFO">${myacount} = False</msg>
-<status status="PASS" starttime="20230903 02:07:37.672" endtime="20230903 02:07:46.133"/>
-</kw>
-<if>
-<branch type="IF" condition="'${myacount}' == 'True'">
-<kw name="Log" library="BuiltIn">
-<arg>Navigated to My account page.</arg>
-<doc>Logs the given message with the given level.</doc>
-<status status="NOT RUN" starttime="20230903 02:07:46.133" endtime="20230903 02:07:46.133"/>
-</kw>
-<status status="NOT RUN" starttime="20230903 02:07:46.133" endtime="20230903 02:07:46.133"/>
-</branch>
-<branch type="ELSE">
-<kw name="Log" library="BuiltIn">
-<arg>Navigation to My account page is failed</arg>
-<doc>Logs the given message with the given level.</doc>
-<msg timestamp="20230903 02:07:46.133" level="INFO">Navigation to My account page is failed</msg>
-<status status="PASS" starttime="20230903 02:07:46.133" endtime="20230903 02:07:46.133"/>
-</kw>
-<status status="PASS" starttime="20230903 02:07:46.133" endtime="20230903 02:07:46.133"/>
-</branch>
-<status status="PASS" starttime="20230903 02:07:46.133" endtime="20230903 02:07:46.133"/>
-</if>
-<status status="PASS" starttime="20230903 02:07:33.054" endtime="20230903 02:07:46.133"/>
-</kw>
-<status status="PASS" starttime="20230903 02:06:33.856" endtime="20230903 02:07:46.133"/>
-</kw>
-<doc>Testcase 002 Validate Registering an Account by providing all the fields</doc>
+<doc>Validate the Registering an Account by entering different password in 'Password' fields.
+password= elon@123 and confirm password= elon@abc  both password are different so testcase should fail</doc>
 <tag>Sanity testing</tag>
-<status status="PASS" starttime="20230903 02:06:33.856" endtime="20230903 02:07:46.133"/>
-</test>
-<test id="s1-t3" name="TC 003" line="21">
-<kw name="Validate the Registration account by unselecting checkbox for 'Newsletter' fields">
-<kw name="Click on 'Register' link" library="resource_registration_functionality">
-<doc>User can click on Registration link which is located on header part of home page
-After clicking on Registration page will open.</doc>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${link_registration}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20230903 02:07:46.133" level="INFO">Clicking element '//a[normalize-space()='Register']'.</msg>
-<status status="PASS" starttime="20230903 02:07:46.133" endtime="20230903 02:07:48.720"/>
-</kw>
-<status status="PASS" starttime="20230903 02:07:46.133" endtime="20230903 02:07:48.720"/>
-</kw>
-<kw name="Select Gender Radio Button" library="resource_registration_functionality">
-<arg>M</arg>
-<doc>User should select gender radio button male or female</doc>
-<kw name="Page Should Contain Radio Button" library="SeleniumLibrary">
-<arg>${rdo_btn_gender_male}</arg>
-<doc>Verifies radio button ``locator`` is found from current page.</doc>
-<msg timestamp="20230903 02:07:51.767" level="INFO">Current page contains radio button '//input[@id='gender-male']'.</msg>
-<status status="PASS" starttime="20230903 02:07:48.720" endtime="20230903 02:07:51.767"/>
-</kw>
-<kw name="Select Radio Button" library="SeleniumLibrary">
-<arg>Gender</arg>
-<arg>${gender}</arg>
-<doc>Sets the radio button group ``group_name`` to ``value``.</doc>
-<msg timestamp="20230903 02:07:51.767" level="INFO">Selecting 'M' from radio button 'Gender'.</msg>
-<status status="PASS" starttime="20230903 02:07:51.767" endtime="20230903 02:07:54.849"/>
-</kw>
-<status status="PASS" starttime="20230903 02:07:48.720" endtime="20230903 02:07:54.849"/>
-</kw>
-<kw name="Enter Firstname" library="resource_registration_functionality">
-<arg>Elon</arg>
-<doc>Entering First Name as Elon</doc>
-<kw name="Input Text" library="SeleniumLibrary">
-<arg>${txt_firstname}</arg>
-<arg>${fistname}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20230903 02:07:54.849" level="INFO">Typing text 'Elon' into text field '//input[@id='FirstName']'.</msg>
-<status status="PASS" starttime="20230903 02:07:54.849" endtime="20230903 02:07:57.961"/>
-</kw>
-<status status="PASS" starttime="20230903 02:07:54.849" endtime="20230903 02:07:57.961"/>
-</kw>
-<kw name="Enter Lastname" library="resource_registration_functionality">
-<arg>Musk</arg>
-<doc>Entering Lastname as Musk</doc>
-<kw name="Input Text" library="SeleniumLibrary">
-<arg>${txt_lastname}</arg>
-<arg>${lastname}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20230903 02:07:57.961" level="INFO">Typing text 'Musk' into text field '//input[@id='LastName']'.</msg>
-<status status="PASS" starttime="20230903 02:07:57.961" endtime="20230903 02:08:01.112"/>
-</kw>
-<status status="PASS" starttime="20230903 02:07:57.961" endtime="20230903 02:08:01.112"/>
-</kw>
-<kw name="Select Date of birth from dropdown option" library="resource_registration_functionality">
-<arg>3</arg>
-<arg>September</arg>
-<arg>1993</arg>
-<doc>Selecting day option from date of birth dropdown menu</doc>
-<kw name="Page Should Contain Element" library="SeleniumLibrary">
-<arg>${dd_day}</arg>
-<doc>Verifies that element ``locator`` is found on the current page.</doc>
-<msg timestamp="20230903 02:08:02.129" level="INFO">Current page contains element '//select[@name='DateOfBirthDay']'.</msg>
-<status status="PASS" starttime="20230903 02:08:01.112" endtime="20230903 02:08:02.129"/>
-</kw>
-<kw name="Select From List By Label" library="SeleniumLibrary">
-<arg>DateOfBirthDay</arg>
-<arg>${day}</arg>
-<doc>Selects options from selection list ``locator`` by ``labels``.</doc>
-<msg timestamp="20230903 02:08:02.129" level="INFO">Selecting options from selection list 'DateOfBirthDay' by label 3.</msg>
-<status status="PASS" starttime="20230903 02:08:02.129" endtime="20230903 02:08:09.253"/>
-</kw>
-<kw name="Select From List By Label" library="SeleniumLibrary">
-<arg>DateOfBirthMonth</arg>
-<arg>${month}</arg>
-<doc>Selects options from selection list ``locator`` by ``labels``.</doc>
-<msg timestamp="20230903 02:08:09.253" level="INFO">Selecting options from selection list 'DateOfBirthMonth' by label September.</msg>
-<status status="PASS" starttime="20230903 02:08:09.253" endtime="20230903 02:08:16.361"/>
-</kw>
-<kw name="Select From List By Label" library="SeleniumLibrary">
-<arg>DateOfBirthYear</arg>
-<arg>${year}</arg>
-<doc>Selects options from selection list ``locator`` by ``labels``.</doc>
-<msg timestamp="20230903 02:08:16.361" level="INFO">Selecting options from selection list 'DateOfBirthYear' by label 1993.</msg>
-<status status="PASS" starttime="20230903 02:08:16.361" endtime="20230903 02:08:23.458"/>
-</kw>
-<status status="PASS" starttime="20230903 02:08:01.112" endtime="20230903 02:08:23.458"/>
-</kw>
-<kw name="Enter Email" library="resource_registration_functionality">
-<arg>elonmusk14@gmail.com</arg>
-<doc>Entering Email Address as elonmusk@gmail.com</doc>
-<kw name="Input Text" library="SeleniumLibrary">
-<arg>${txt_email}</arg>
-<arg>${email}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20230903 02:08:23.458" level="INFO">Typing text 'elonmusk14@gmail.com' into text field '//input[@id='Email']'.</msg>
-<status status="PASS" starttime="20230903 02:08:23.458" endtime="20230903 02:08:26.600"/>
-</kw>
-<status status="PASS" starttime="20230903 02:08:23.458" endtime="20230903 02:08:26.600"/>
-</kw>
-<kw name="Enter Company Name" library="resource_registration_functionality">
-<arg>Nvidia India</arg>
-<doc>Enter Company name as Nvidia India</doc>
-<kw name="Page Should Contain Element" library="SeleniumLibrary">
-<arg>${txt_company_name}</arg>
-<doc>Verifies that element ``locator`` is found on the current page.</doc>
-<msg timestamp="20230903 02:08:27.616" level="INFO">Current page contains element '//input[@id='Company']'.</msg>
-<status status="PASS" starttime="20230903 02:08:26.600" endtime="20230903 02:08:27.616"/>
-</kw>
-<kw name="Input Text" library="SeleniumLibrary">
-<arg>${txt_company_name}</arg>
-<arg>${company}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20230903 02:08:27.616" level="INFO">Typing text 'Nvidia India' into text field '//input[@id='Company']'.</msg>
-<status status="PASS" starttime="20230903 02:08:27.616" endtime="20230903 02:08:30.751"/>
-</kw>
-<status status="PASS" starttime="20230903 02:08:26.600" endtime="20230903 02:08:30.751"/>
-</kw>
-<kw name="Varify Newsletter checkbox is selected" library="resource_registration_functionality">
-<doc>Varify that newsletter checkbox is already selected</doc>
-<kw name="Page Should Contain Checkbox" library="SeleniumLibrary">
-<arg>${txt_newsletter}</arg>
-<doc>Verifies checkbox ``locator`` is found from the current page.</doc>
-<msg timestamp="20230903 02:08:33.788" level="INFO">Current page contains checkbox '//input[@id='Newsletter']'.</msg>
-<status status="PASS" starttime="20230903 02:08:30.751" endtime="20230903 02:08:33.788"/>
-</kw>
-<kw name="Checkbox Should Be Selected" library="SeleniumLibrary">
-<arg>${txt_newsletter}</arg>
-<doc>Verifies checkbox ``locator`` is selected/checked.</doc>
-<msg timestamp="20230903 02:08:33.788" level="INFO">Verifying checkbox '//input[@id='Newsletter']' is selected.</msg>
-<status status="PASS" starttime="20230903 02:08:33.788" endtime="20230903 02:08:37.829"/>
-</kw>
-<status status="PASS" starttime="20230903 02:08:30.751" endtime="20230903 02:08:37.829"/>
-</kw>
-<kw name="Enter Password" library="resource_registration_functionality">
-<arg>elon@123</arg>
-<doc>Entering passwords as elon@123</doc>
-<kw name="Input Text" library="SeleniumLibrary">
-<arg>${txt_password}</arg>
-<arg>${password}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20230903 02:08:37.829" level="INFO">Typing text 'elon@123' into text field '//input[@id='Password']'.</msg>
-<status status="PASS" starttime="20230903 02:08:37.829" endtime="20230903 02:08:40.953"/>
-</kw>
-<status status="PASS" starttime="20230903 02:08:37.829" endtime="20230903 02:08:40.953"/>
-</kw>
-<kw name="Enter Confirm Password" library="resource_registration_functionality">
-<arg>elon@123</arg>
-<doc>Entering confirm password as elon@123</doc>
-<kw name="Input Text" library="SeleniumLibrary">
-<arg>${txt_confirm_password}</arg>
-<arg>${confim_password}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20230903 02:08:40.953" level="INFO">Typing text 'elon@123' into text field '//input[@id='ConfirmPassword']'.</msg>
-<status status="PASS" starttime="20230903 02:08:40.953" endtime="20230903 02:08:44.109"/>
-</kw>
-<status status="PASS" starttime="20230903 02:08:40.953" endtime="20230903 02:08:44.109"/>
-</kw>
-<kw name="Click on Register button" library="resource_registration_functionality">
-<doc>Clicking on register button, User should be logged in, navigate to register page and
-'Your registration Completed' message should be displayed on the page.</doc>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${btn_register}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20230903 02:08:44.109" level="INFO">Clicking element '//button[@id='register-button']'.</msg>
-<status status="PASS" starttime="20230903 02:08:44.109" endtime="20230903 02:08:47.783"/>
-</kw>
-<kw name="Sleep" library="BuiltIn">
-<arg>3</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20230903 02:08:50.783" level="INFO">Slept 3 seconds</msg>
-<status status="PASS" starttime="20230903 02:08:47.783" endtime="20230903 02:08:50.783"/>
-</kw>
-<kw name="Run Keyword And Return Status" library="BuiltIn">
-<var>${message}</var>
-<arg>page should contain element</arg>
-<arg>${successful_message}</arg>
-<arg>Your registration Completed</arg>
-<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
-<kw name="Page Should Contain Element" library="SeleniumLibrary">
-<arg>${successful_message}</arg>
-<arg>Your registration Completed</arg>
-<doc>Verifies that element ``locator`` is found on the current page.</doc>
-<msg timestamp="20230903 02:08:51.801" level="INFO">Current page contains element '//div[normalize-space()='Your registration completed']'.</msg>
-<status status="PASS" starttime="20230903 02:08:50.783" endtime="20230903 02:08:51.801"/>
-</kw>
-<msg timestamp="20230903 02:08:51.801" level="INFO">${message} = True</msg>
-<status status="PASS" starttime="20230903 02:08:50.783" endtime="20230903 02:08:51.801"/>
-</kw>
-<if>
-<branch type="IF" condition="'${message}' == 'True'">
-<kw name="Log" library="BuiltIn">
-<arg>Registration successful</arg>
-<doc>Logs the given message with the given level.</doc>
-<msg timestamp="20230903 02:08:51.802" level="INFO">Registration successful</msg>
-<status status="PASS" starttime="20230903 02:08:51.802" endtime="20230903 02:08:51.802"/>
-</kw>
-<status status="PASS" starttime="20230903 02:08:51.801" endtime="20230903 02:08:51.802"/>
-</branch>
-<branch type="ELSE">
-<kw name="Log" library="BuiltIn">
-<arg>Registration unsuccessful</arg>
-<doc>Logs the given message with the given level.</doc>
-<status status="NOT RUN" starttime="20230903 02:08:51.802" endtime="20230903 02:08:51.803"/>
-</kw>
-<status status="NOT RUN" starttime="20230903 02:08:51.802" endtime="20230903 02:08:51.803"/>
-</branch>
-<status status="PASS" starttime="20230903 02:08:51.801" endtime="20230903 02:08:51.803"/>
-</if>
-<status status="PASS" starttime="20230903 02:08:44.109" endtime="20230903 02:08:51.803"/>
-</kw>
-<kw name="Click on 'Continue' button" library="resource_registration_functionality">
-<doc>After successful registration click on 'continue' button which navigate to
-'My Account' page and confirm email should be sent to registered email address.</doc>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${btn_continue}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20230903 02:08:51.805" level="INFO">Clicking element '//a[normalize-space()='Continue']'.</msg>
-<status status="PASS" starttime="20230903 02:08:51.803" endtime="20230903 02:08:54.475"/>
-</kw>
-<kw name="Sleep" library="BuiltIn">
-<arg>2</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20230903 02:08:56.476" level="INFO">Slept 2 seconds</msg>
-<status status="PASS" starttime="20230903 02:08:54.475" endtime="20230903 02:08:56.476"/>
-</kw>
-<kw name="Run Keyword And Return Status" library="BuiltIn">
-<var>${myacount}</var>
-<arg>page should contain element</arg>
-<arg>${txt_myaccount}</arg>
-<arg>My account</arg>
-<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
-<kw name="Page Should Contain Element" library="SeleniumLibrary">
-<arg>${txt_myaccount}</arg>
-<arg>My account</arg>
-<doc>Verifies that element ``locator`` is found on the current page.</doc>
-<msg timestamp="20230903 02:09:04.990" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-13.png"&gt;&lt;img src="selenium-screenshot-13.png" width="800px"&gt;&lt;/a&gt;</msg>
-<msg timestamp="20230903 02:09:04.990" level="FAIL">My account</msg>
-<status status="FAIL" starttime="20230903 02:08:56.476" endtime="20230903 02:09:04.990"/>
-</kw>
-<msg timestamp="20230903 02:09:04.990" level="INFO">${myacount} = False</msg>
-<status status="PASS" starttime="20230903 02:08:56.476" endtime="20230903 02:09:04.990"/>
-</kw>
-<if>
-<branch type="IF" condition="'${myacount}' == 'True'">
-<kw name="Log" library="BuiltIn">
-<arg>Navigated to My account page.</arg>
-<doc>Logs the given message with the given level.</doc>
-<status status="NOT RUN" starttime="20230903 02:09:04.991" endtime="20230903 02:09:04.991"/>
-</kw>
-<status status="NOT RUN" starttime="20230903 02:09:04.991" endtime="20230903 02:09:04.991"/>
-</branch>
-<branch type="ELSE">
-<kw name="Log" library="BuiltIn">
-<arg>Navigation to My account page is failed</arg>
-<doc>Logs the given message with the given level.</doc>
-<msg timestamp="20230903 02:09:04.991" level="INFO">Navigation to My account page is failed</msg>
-<status status="PASS" starttime="20230903 02:09:04.991" endtime="20230903 02:09:04.991"/>
-</kw>
-<status status="PASS" starttime="20230903 02:09:04.991" endtime="20230903 02:09:04.991"/>
-</branch>
-<status status="PASS" starttime="20230903 02:09:04.990" endtime="20230903 02:09:04.991"/>
-</if>
-<status status="PASS" starttime="20230903 02:08:51.803" endtime="20230903 02:09:04.991"/>
-</kw>
-<status status="PASS" starttime="20230903 02:07:46.133" endtime="20230903 02:09:04.991"/>
-</kw>
-<doc>Testcase 003 Validate the Registration account by unselecting checkbox for 'Newsletter' fields</doc>
-<tag>Sanity testing</tag>
-<status status="PASS" starttime="20230903 02:07:46.133" endtime="20230903 02:09:04.992"/>
-</test>
-<test id="s1-t4" name="TC 004" line="26">
-<kw name="Validate different ways to navigating to 'Register' page">
-<msg timestamp="20230903 02:09:04.999" level="FAIL">No keyword with name 'Validate different ways to navigating to 'Register' page' found.</msg>
-<status status="FAIL" starttime="20230903 02:09:04.999" endtime="20230903 02:09:04.999"/>
-</kw>
-<doc>Testcase 004 Validate different ways to navigating to 'Register' page</doc>
-<tag>Sanity testing</tag>
-<status status="FAIL" starttime="20230903 02:09:04.994" endtime="20230903 02:09:05.000">No keyword with name 'Validate different ways to navigating to 'Register' page' found.</status>
+<status status="FAIL" starttime="20230905 19:29:46.250" endtime="20230905 19:30:16.182">Element with locator '//span[@id='ConfirmPassword-error']' not found.</status>
 </test>
 <kw name="Close My Browser" library="resource_browsers" type="TEARDOWN">
 <kw name="Close Browser" library="SeleniumLibrary">
 <doc>Closes the current browser.</doc>
-<status status="PASS" starttime="20230903 02:09:05.000" endtime="20230903 02:09:08.171"/>
+<status status="PASS" starttime="20230905 19:30:16.187" endtime="20230905 19:30:19.398"/>
 </kw>
-<status status="PASS" starttime="20230903 02:09:05.000" endtime="20230903 02:09:08.171"/>
+<status status="PASS" starttime="20230905 19:30:16.187" endtime="20230905 19:30:19.399"/>
 </kw>
 <doc>This is Test suite file to execute test cases for Registration Functionality</doc>
-<status status="FAIL" starttime="20230903 02:05:47.772" endtime="20230903 02:09:08.171"/>
+<status status="FAIL" starttime="20230905 19:29:42.169" endtime="20230905 19:30:19.399"/>
 </suite>
 <statistics>
 <total>
-<stat pass="3" fail="1" skip="0">All Tests</stat>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
 </total>
 <tag>
-<stat pass="2" fail="1" skip="0">Sanity testing</stat>
-<stat pass="1" fail="0" skip="0">Smoke testing</stat>
+<stat pass="0" fail="1" skip="0">Sanity testing</stat>
 </tag>
 <suite>
-<stat pass="3" fail="1" skip="0" id="s1" name="Test Suite Registration Functionality">Test Suite Registration Functionality</stat>
+<stat pass="0" fail="1" skip="0" id="s1" name="Test Suite Registration Functionality">Test Suite Registration Functionality</stat>
 </suite>
 </statistics>
 <errors>
