@@ -40,18 +40,45 @@ TC 006
     [Tags]    Sanity Testing
     Validate the Registration account by unselecting checkbox for 'Newsletter' fields
 
-TC 007
+TC 007      #failed "warning message is not showing in automation testing
     [Documentation]    Validate the Registering an Account by entering different password in 'Password' fields.
     ...  password= elon@123 and confirm password= elon@abc  both password are different so testcase should fail
     [Tags]    Sanity testing
     Validate the Registering an Account by entering different password in 'Password' fields.
+
+TC 008
+    [Documentation]    Validate the Registering an Account by entering the existing account details
+    ...    (ie. Existing email address)
+    [Tags]    Sanity testing
+    Validate the Registering an Account by entering the existing Email
+
+TC 009
+    [Documentation]    Validate the Registering an Account by entering an invalid email address into the Email
+    ...    field and Varifing warning message:'Wrong email' should display.
+    [Tags]    Smoke testing
+    Validate the Registering an Account by entering an Invalid Email Address
+     [Template]    Entering Invalide Email and Confirm Warning message
+     elonmusk
+     elonmusk@gmail.
+     @elonmusk@.com
+     elonmusk@
+
+TC 010      #failed due to style attribute is not available in html code.
+    [Documentation]    Validate all the mandatory fields in the Register Account page are marked with
+    ...    red color *(Asterisk) symbol
+    [Tags]    Sanity testing
+    Validate all the mandatory fields in the Register Account page are marked with red color * symbol
+
+TC 011
+    [Documentation]    Validate whether the Mandatory fields in Register Account page are accepting only spaces
+
 
 *** Keywords ***
 Validate Registering an Account by providing only the mandatory fields
     resource_registration_functionality.Click on 'Register' link
     resource_registration_functionality.Enter Firstname           Elon
     resource_registration_functionality.Enter Lastname            Musk
-    resource_registration_functionality.Enter Email               elonmusk12@gmail.com
+    resource_registration_functionality.Enter Email               elonmusk20@gmail.com
     resource_registration_functionality.Enter Password            elon@123
     resource_registration_functionality.Enter Confirm Password    elon@123
     resource_registration_functionality.Click on Register button
@@ -125,7 +152,28 @@ Validate the Registering an Account by entering different password in 'Password'
     resource_registration_functionality.Click on 'Register' link
     resource_registration_functionality.Enter Firstname                  john
     resource_registration_functionality.Enter Lastname                   cena
-    resource_registration_functionality.Enter Email                      johnce@gmail.com
+    resource_registration_functionality.Enter Email                      johnce11@gmail.com
     resource_registration_functionality.Enter Password                   john@123
     resource_registration_functionality.Enter Confirm Password           john@abcdefghij
     resource_registration_functionality.Display Warning Message for both Passwords not matched
+
+
+Validate the Registering an Account by entering the existing Email
+    resource_registration_functionality.Click on 'Register' link
+    resource_registration_functionality.Enter Firstname           Elon
+    resource_registration_functionality.Enter Lastname            Musk
+    resource_registration_functionality.Enter Email               elonmusk12@gmail.com
+    resource_registration_functionality.Enter Password            elon@123
+    resource_registration_functionality.Enter Confirm Password    elon@123
+    resource_registration_functionality.Click on Register button
+    resource_registration_functionality.Display Warning Message Entering the Existing Email
+
+Validate the Registering an Account by entering an Invalid Email Address
+    resource_registration_functionality.Entering Invalide Email and Confirm Warning message
+
+Validate all the mandatory fields in the Register Account page are marked with red color * symbol
+    resource_registration_functionality.Varify Mandatory Fields Marked with Red Asterisk
+
+Validate whether the Mandatory fields in Register Account page are accepting only spaces
+    resource_registration_functionality.Click on 'Register' link
+    resource_registration_functionality.Validate Mandatory Fields for Spaces

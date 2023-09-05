@@ -163,11 +163,55 @@ Display Warning Message for Confirm Password
     run keyword if '${confim_password}'   ==   '${exp_warning}'  log  Warning message for confirm password is displayed
 
 Display Warning Message for both Passwords not matched
-    [Documentation]    Varify when user entering password and cofirm password field is not same and Error message
+    [Documentation]    Varify when user entering password and confirm password field is not same and Error message
     ...    'The password and confirmation password do not match.' should displayed.
+    sleep    2
     ${txt}=     get text        ${warning_pass_not_matched}
     ${exp_txt}      set variable    The password and confirmation password do not match.
     log    ${txt}
     run keyword if    '${txt}'    ==   '${exp_txt}'     log
     ...    The password and confirmation password do not match displayed
 
+Display Warning Message Entering the Existing Email
+    [Documentation]    Varify when user entering existing email address and trying to register, varify warning
+    ...    message:'The specified email already exists' should displayed.
+    page should contain element    ${warning_exist_email}
+    ${txt}=     get text    ${warning_exist_email}
+    log    ${txt}
+    ${warning}      run keyword and return status    page should contain element    ${warning_exist_email}  The specified email already exists
+    IF    '${warning}'  ==  True
+        log    Already email exist
+    ELSE
+        log    Failed
+    END
+
+
+Entering Invalide Email and Confirm Warning message
+    [Documentation]    Verify when user entering wrong email address into email field,and varify
+    ...   warning message:'Wrong email' is displayed
+    [Arguments]    ${invalid_email}
+    resource_registration_functionality.Click on 'Register' link
+    Input Text    ${txt_email}    ${invalid_email}
+    Sleep    2s    # Wait for the page to process
+    ${warning_message_present}=    Run Keyword And Return Status    Should Contain Element    ${warning_wrong_email}    #Wrong email
+    Log    The warning message is present: ${warning_message_present}
+    Capture Page Screenshot    # Capture a screenshot for reference
+
+Varify Mandatory Fields Marked with Red Asterisk
+    [Documentation]    Verify all mandatory field are marked with red coloured asterisk symbol it means
+    ...     user should fill this field compasory to register new user.
+    resource_registration_functionality.Click on 'Register' link
+    @{mandatory_fields}     get webelements    ${red_asterisk}
+    FOR    ${element}   IN    @{mandatory_fields}
+        ${txt_color}    get element attribute   ${element}    style
+        run keyword if  '${txt_color}'    contains    'color: red'   Log    Field is mandatory and marked with red asterisk
+        ...    ELSE    Log    Field is NOT marked as mandatory with a red asterisk
+    END
+
+
+Validate Mandatory Fields for Spaces
+    [Documentation]    Verify whether the mandatory fields in register account are accepting only space.
+    @{mandatory_field}      get webelements     ${all_mandatory_fields}
+    FOR    ${element}   IN   @{mandatory_field}
+        input text    ${element}    ${EMPTY}
+    END
