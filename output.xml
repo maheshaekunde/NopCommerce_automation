@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.1.1 (Python 3.11.3 on win32)" generated="20230907 22:23:25.097" rpa="false" schemaversion="4">
+<suite id="s1" name="Test Suite Registration Functionality" source="D:\files\Nopcommerce\NopCommerce_automation\TestSuits\test_suite_registration_functionality.robot">
+<kw name="Open Chrome Browser" library="resource_browsers" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${url}</arg>
+<arg>${browser}[0]</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20230907 22:23:25.415" level="INFO">Opening browser 'chrome' to base url 'https://demo.nopcommerce.com/'.</msg>
+<status status="PASS" starttime="20230907 22:23:25.414" endtime="20230907 22:23:29.408"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20230907 22:23:29.408" endtime="20230907 22:23:29.566"/>
+</kw>
+<kw name="Set Selenium Implicit Wait" library="SeleniumLibrary">
+<arg>5s</arg>
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<status status="PASS" starttime="20230907 22:23:29.566" endtime="20230907 22:23:29.568"/>
+</kw>
+<kw name="Set Selenium Speed" library="SeleniumLibrary">
+<arg>1s</arg>
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<status status="PASS" starttime="20230907 22:23:29.568" endtime="20230907 22:23:29.569"/>
+</kw>
+<status status="PASS" starttime="20230907 22:23:25.414" endtime="20230907 22:23:29.569"/>
+</kw>
+<test id="s1-t1" name="TC 013" line="83">
+<kw name="Validate Password Visibility Toggle">
+<kw name="Click on 'Register' link" library="resource_registration_functionality">
+<doc>User can click on Registration link which is located on header part of home page
+After clicking on Registration page will open.</doc>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${link_registration}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230907 22:23:29.571" level="INFO">Clicking element '//a[normalize-space()='Register']'.</msg>
+<status status="PASS" starttime="20230907 22:23:29.571" endtime="20230907 22:23:33.046"/>
+</kw>
+<status status="PASS" starttime="20230907 22:23:29.571" endtime="20230907 22:23:33.048"/>
+</kw>
+<kw name="Enter Password" library="resource_registration_functionality">
+<arg>123456</arg>
+<doc>Entering passwords as elon@123</doc>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${txt_password}</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230907 22:23:33.049" level="INFO">Typing text '123456' into text field '//input[@id='Password']'.</msg>
+<status status="PASS" starttime="20230907 22:23:33.049" endtime="20230907 22:23:36.517"/>
+</kw>
+<status status="PASS" starttime="20230907 22:23:33.049" endtime="20230907 22:23:36.518"/>
+</kw>
+<kw name="Enter Confirm Password" library="resource_registration_functionality">
+<arg>123456</arg>
+<doc>Entering confirm password as elon@123</doc>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${txt_confirm_password}</arg>
+<arg>${confim_password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230907 22:23:36.518" level="INFO">Typing text '123456' into text field '//input[@id='ConfirmPassword']'.</msg>
+<status status="PASS" starttime="20230907 22:23:36.518" endtime="20230907 22:23:39.913"/>
+</kw>
+<status status="PASS" starttime="20230907 22:23:36.518" endtime="20230907 22:23:39.914"/>
+</kw>
+<kw name="Varify Password and Confirm password are hidden by . symball" library="resource_registration_functionality">
+<doc>Varify when user entered text into password and confirm password fields, It should
+be hidden by symball '.'</doc>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${password_text}</var>
+<arg>${txt_password}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20230907 22:23:42.450" level="INFO">${password_text} = </msg>
+<status status="PASS" starttime="20230907 22:23:39.925" endtime="20230907 22:23:42.450"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${confirm_password_text}</var>
+<arg>${txt_confirm_password}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20230907 22:23:44.510" level="INFO">${confirm_password_text} = </msg>
+<status status="PASS" starttime="20230907 22:23:42.451" endtime="20230907 22:23:44.510"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${password_text}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20230907 22:23:44.510" level="INFO"/>
+<status status="PASS" starttime="20230907 22:23:44.510" endtime="20230907 22:23:44.510"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${confirm_password_text}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20230907 22:23:44.511" level="INFO"/>
+<status status="PASS" starttime="20230907 22:23:44.511" endtime="20230907 22:23:44.511"/>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${password_text}</arg>
+<arg>........</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<msg timestamp="20230907 22:23:44.511" level="FAIL">'' does not contain '........'</msg>
+<status status="FAIL" starttime="20230907 22:23:44.511" endtime="20230907 22:23:44.512"/>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${confirm_password_text}</arg>
+<arg>........</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="NOT RUN" starttime="20230907 22:23:44.512" endtime="20230907 22:23:44.512"/>
+</kw>
+<status status="FAIL" starttime="20230907 22:23:39.916" endtime="20230907 22:23:44.512"/>
+</kw>
+<status status="FAIL" starttime="20230907 22:23:29.571" endtime="20230907 22:23:44.512"/>
+</kw>
+<doc>Validate the password text entered into the 'Password' and 'Confirm Password' field of
+'Registering Account' functionality is Toggled to hide its visibility(* or . symboll)</doc>
+<tag>Sanity testing</tag>
+<status status="FAIL" starttime="20230907 22:23:29.569" endtime="20230907 22:23:44.513">'' does not contain '........'</status>
+</test>
+<kw name="Close My Browser" library="resource_browsers" type="TEARDOWN">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20230907 22:23:44.518" endtime="20230907 22:23:47.664"/>
+</kw>
+<status status="PASS" starttime="20230907 22:23:44.518" endtime="20230907 22:23:47.665"/>
+</kw>
+<doc>This is Test suite file to execute test cases for Registration Functionality</doc>
+<status status="FAIL" starttime="20230907 22:23:25.107" endtime="20230907 22:23:47.665"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="0" fail="1" skip="0">Sanity testing</stat>
+</tag>
+<suite>
+<stat pass="0" fail="1" skip="0" id="s1" name="Test Suite Registration Functionality">Test Suite Registration Functionality</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
