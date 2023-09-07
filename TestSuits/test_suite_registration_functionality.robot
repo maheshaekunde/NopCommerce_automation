@@ -69,8 +69,49 @@ TC 010      #failed due to style attribute is not available in html code.
     [Tags]    Sanity testing
     Validate all the mandatory fields in the Register Account page are marked with red color * symbol
 
-TC 011
+TC 011      #failed due to warning message is not displayed
     [Documentation]    Validate whether the Mandatory fields in Register Account page are accepting only spaces
+    [Tags]    Sanity testing
+    Validate whether the Mandatory fields in Register Account page are accepting only spaces
+
+TC 012
+    [Documentation]    Validate whether the leading and trailing space entered into the Register
+     ...    Account fields are trimmed.
+     [Tags]    Sanity testing
+     Validate Leading and Trailing Space Trimming
+
+TC 013
+    [Documentation]    Validate the password text entered into the 'Password' and 'Confirm Password' field of
+    ...    'Registering Account' functionality is Toggled to hide its visibility(* or . symboll)
+    [Tags]    Sanity testing
+    Validate Password Visibility Toggle
+
+TC 014
+    [Documentation]     Validate navigating to other page using options or links provided on
+    ...     the 'Register account' page.
+    [Tags]      Sanity testing
+    Validate Navigation from Register Account Page
+
+TC 015
+    [Documentation]    Validate the Register Account, by filing 'Password' field and not filling
+    ...     'Confirm Password' field.
+    [Tags]    Sanity testing
+    Validate Register Account with Missing Confirm Password
+
+TC 016
+    [Documentation]    Validate the Breadcrumb, Page Heading, Page URL, Page title of 'Register Account' Page
+    [Tags]    Sanity testing
+    Validate Heading, URL, Title of Register Account Page
+
+TC 017
+    [Documentation]    Valide 'Register Account' functionality from 'Login' page.
+    [Tags]    Sanity testing
+    Validte Register Account page from Login page
+
+TC 018
+    [Documentation]    Valide 'Register Account' functionality from My Account link at footer.
+    [Tags]    Sanity testing
+    Validate Register Account from My Account link on Footer
 
 
 *** Keywords ***
@@ -177,3 +218,43 @@ Validate all the mandatory fields in the Register Account page are marked with r
 Validate whether the Mandatory fields in Register Account page are accepting only spaces
     resource_registration_functionality.Click on 'Register' link
     resource_registration_functionality.Validate Mandatory Fields for Spaces
+    resource_registration_functionality.Click on Register button
+
+Validate Leading and Trailing Space Trimming
+    resource_registration_functionality.Click on 'Register' link
+    resource_registration_functionality.Validate Mandatory Fields for Spaces    john    cena    jc12@gmail.com
+    ...     123456      123456
+    resource_registration_functionality.Click on Register button
+
+Validate Password Visibility Toggle
+    resource_registration_functionality.Click on 'Register' link
+    resource_registration_functionality.Enter Password                  123456
+    resource_registration_functionality.Enter Confirm Password          123456
+    resource_registration_functionality.Varify Password and Confirm password are hidden by . symball
+
+Validate Navigation from Register Account Page
+    resource_registration_functionality.Click on 'Register' link
+    resource_registration_functionality.Navigating to Login page from Register page
+    resource_registration_functionality.Navigating to Wishlist page from Register page
+    resource_registration_functionality.Navigating to Shoping Cart page from Register page
+
+
+Validate Register Account with Missing Confirm Password
+    resource_registration_functionality.Click on 'Register' link
+    resource_registration_functionality.Enter Firstname           Elon
+    resource_registration_functionality.Enter Lastname            Musk
+    resource_registration_functionality.Enter Email               elonmusk12@gmail.com
+    resource_registration_functionality.Varify Entering only Password field    123456
+
+Validate Heading, URL, Title of Register Account Page
+    resource_registration_functionality.Click on 'Register' link
+    resource_registration_functionality.Varify Heading Url Title    Register
+    ...    https://demo.nopcommerce.com/register?returnUrl=%2F      nopCommerce demo store. Register
+
+Validte Register Account page from Login page
+    resource_registration_functionality.Click on 'Login' link
+    resource_registration_functionality.Varify Registration from login page     Register
+
+
+Validate Register Account from My Account link on Footer
+    resource_registration_functionality.Click on My Account link    Register

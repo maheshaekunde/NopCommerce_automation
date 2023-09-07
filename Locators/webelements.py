@@ -27,3 +27,7 @@ warning_exist_email="//li[normalize-space()='The specified email already exists'
 warning_wrong_email="//span[@id='Email-error']"
 red_asterisk="//span[@class='required' and contains(text(), '*')]"
 all_mandatory_fields="//input[contains(@id,'Name') or @id='Email' or @type='password']"
+return_customer_txt="//strong[normalize-space()='Returning Customer']"
+link_wishlist="//span[@class='wishlist-label']"
+link_shoping_cart="//span[@class='cart-label']"
+link_my_account="//a[normalize-space()='My account']"

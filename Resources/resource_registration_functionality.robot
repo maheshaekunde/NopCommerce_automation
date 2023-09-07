@@ -211,7 +211,137 @@ Varify Mandatory Fields Marked with Red Asterisk
 
 Validate Mandatory Fields for Spaces
     [Documentation]    Verify whether the mandatory fields in register account are accepting only space.
-    @{mandatory_field}      get webelements     ${all_mandatory_fields}
-    FOR    ${element}   IN   @{mandatory_field}
-        input text    ${element}    ${EMPTY}
-    END
+    [Arguments]    ${firstname}   ${lastname}  ${email}   ${password}   ${conf_pass}
+    # for firstname
+    ${input_firstname_with_spaces}       "  ${firstname}  "
+    Input Text    ${txt_firstname}    ${input_firstname_with_spaces}
+    ${actual_text}    Get Text    ${txt_firstname}
+    Should Be Equal As Strings    ${actual_text}    ${firstname}
+
+    # for lastname
+    ${input_lastname_with_space}        set variable    "   ${lastname}    "
+    input text    ${txt_lastname}       ${input_lastname_with_space}
+    ${actual_text}      get text    ${txt_lastname}
+    should be equal as strings    ${actual_text}    ${lastname}
+
+    # for Email
+    ${input_email_with_space}       set variable    "   ${email}   "
+    input text    ${txt_email}      ${input_email_with_space}
+    ${actual_txt}       get text    ${txt_email}
+    should be equal as strings    ${actual_txt}     ${input_email_with_space}
+
+    # for password
+    ${input_pass_with_space}        set variable    "    ${password}    "
+    input text    ${txt_password}       ${input_pass_with_space}
+    ${actual_txt}   get text    ${txt_password}
+    should be equal as strings    ${actual_txt}     ${input_pass_with_space}
+
+    # for confirm password
+    ${input_conf_pass_with_space}       set variable    "    ${conf_pass}   "
+    input text    ${txt_confirm_password}    ${input_conf_pass_with_space}
+    ${actual_txt}       get text    ${txt_confirm_password}
+    should be equal as strings    ${actual_txt}     ${input_conf_pass_with_space}
+
+
+Varify Password and Confirm password are hidden by . symball
+    [Documentation]    Varify when user entered text into password and confirm password fields, It should
+    ...     be hidden by symball '.'
+    ${password_text}=    get text      ${txt_password}
+    ${confirm_password_text}=   get text    ${txt_confirm_password}
+    log    ${password_text}
+    log    ${confirm_password_text}
+    should contain    ${password_text}      ........
+    should contain    ${confirm_password_text}      ........
+
+
+Navigating to Login page from Register page
+    [Documentation]    User should be successfully navigate to the login page when clicked on
+    ...     login link which is available at header of Register page.
+    #varify login link is available
+    element should be visible    ${link_login}
+    # click on login link
+    click element       ${link_login}
+    # varify user navigated to login page
+    wait until page contains element        ${return_customer_txt}
+    page should contain                     Welcome, Please Sign In!
+    # going back to register page
+    go back
+    # varify register page is visible
+    page should contain                 Register
+
+Navigating to Wishlist page from Register page
+    [Documentation]    User should successfully navigate to Wishlist page when clicked on
+    ...     Wishlist link which is available on header of Register page
+    # varify wishlist link is available
+    element should be visible    ${link_wishlist}
+    # click wishlist link
+    click element                ${link_wishlist}
+    # varify user is navigated to wishlist page
+    wait until page contains element            //h1[normalize-space()='Wishlist']
+    page should contain                         Wishlist
+    # Navigate to register page by clicking go back button for browser
+    go back
+    # varify register page is visible
+    page should contain                 Register
+
+Navigating to Shoping Cart page from Register page
+    [Documentation]    User should successfully navigate to Shoping cart page when clicked on
+    ...    shoping cart link
+    # Varify shoping cart page is visible
+    element should be visible       ${link_shoping_cart}
+    # Click on shoping cart link
+    click element                   ${link_shoping_cart}
+    # Varify user is navigate to shoping cart page
+    wait until page contains element        //h1[normalize-space()='Shopping cart']
+    page should contain                     Shopping cart
+    # Navigate to register page by clicking go back button for browser
+    go back
+    # varify register page is visible
+    page should contain            Register
+
+Varify Entering only Password field
+    [Documentation]    User should fill the password text field but confirm password field should
+    ...   be kept empty and varify Error message "Password is required." should display
+    # entering password field
+    [Arguments]    ${password}
+    input text    ${txt_password}       ${password}
+    # Clicking on register button
+    click element       ${btn_register}
+    # Varify warning message
+    ${actual_warning}=      get text        ${warning_confirm_password}
+    ${exp_warning}=         set variable    Password is required.
+    should be equal as strings      ${actual_warning}       ${exp_warning}
+
+Varify Heading Url Title
+    [Documentation]    Varify the page heading, page url and page title from register an account page
+    # validate page heading
+    [Arguments]    ${register}  ${url}  ${title}
+    page should contain    ${register}
+    # validate page url
+    ${act_url}      get location
+    should be equal as strings    ${act_url}     ${url}
+    # validate page title
+    ${act_title}    get title
+    should be equal as strings    ${act_title}    ${title}
+
+Click on 'Login' link
+    [Documentation]    Clickin on Login link avaialble on header
+    element should be visible    ${link_login}
+    click element    ${link_login}
+
+Varify Registration from login page
+    [Documentation]    Varify navigation of registration page from login page
+    element should be visible    ${btn_register_on_login}
+    click element    ${btn_register_on_login}
+    [Arguments]                ${register_txt}
+    page should contain        ${register_txt}
+
+Click on My Account link
+    [Documentation]    Clicking my account link available in footer part of home page
+    element should be visible    ${link_my_account}
+    click element                ${link_my_account}
+    element should be visible    ${btn_register_on_login}
+    click element    ${btn_register_on_login}
+    [Arguments]                ${register_txt}
+    page should contain        ${register_txt}
+

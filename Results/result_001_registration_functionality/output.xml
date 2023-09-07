@@ -1,168 +1,92 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 6.1.1 (Python 3.11.3 on win32)" generated="20230905 19:29:42.157" rpa="false" schemaversion="4">
+<robot generator="Robot 6.1.1 (Python 3.11.3 on win32)" generated="20230908 01:33:46.669" rpa="false" schemaversion="4">
 <suite id="s1" name="Test Suite Registration Functionality" source="D:\files\Nopcommerce\NopCommerce_automation\TestSuits\test_suite_registration_functionality.robot">
 <kw name="Open Chrome Browser" library="resource_browsers" type="SETUP">
 <kw name="Open Browser" library="SeleniumLibrary">
 <arg>${url}</arg>
 <arg>${browser}[0]</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<msg timestamp="20230905 19:29:42.398" level="INFO">Opening browser 'chrome' to base url 'https://demo.nopcommerce.com/'.</msg>
-<status status="PASS" starttime="20230905 19:29:42.398" endtime="20230905 19:29:46.114"/>
+<msg timestamp="20230908 01:33:46.901" level="INFO">Opening browser 'chrome' to base url 'https://demo.nopcommerce.com/'.</msg>
+<status status="PASS" starttime="20230908 01:33:46.901" endtime="20230908 01:33:50.242"/>
 </kw>
 <kw name="Maximize Browser Window" library="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" starttime="20230905 19:29:46.114" endtime="20230905 19:29:46.246"/>
+<status status="PASS" starttime="20230908 01:33:50.242" endtime="20230908 01:33:50.370"/>
 </kw>
 <kw name="Set Selenium Implicit Wait" library="SeleniumLibrary">
 <arg>5s</arg>
 <doc>Sets the implicit wait value used by Selenium.</doc>
-<status status="PASS" starttime="20230905 19:29:46.246" endtime="20230905 19:29:46.249"/>
+<status status="PASS" starttime="20230908 01:33:50.373" endtime="20230908 01:33:50.378"/>
 </kw>
 <kw name="Set Selenium Speed" library="SeleniumLibrary">
 <arg>1s</arg>
 <doc>Sets the delay that is waited after each Selenium command.</doc>
-<status status="PASS" starttime="20230905 19:29:46.249" endtime="20230905 19:29:46.249"/>
+<status status="PASS" starttime="20230908 01:33:50.379" endtime="20230908 01:33:50.379"/>
 </kw>
-<status status="PASS" starttime="20230905 19:29:42.397" endtime="20230905 19:29:46.250"/>
+<status status="PASS" starttime="20230908 01:33:46.901" endtime="20230908 01:33:50.379"/>
 </kw>
-<test id="s1-t1" name="TC 007" line="43">
-<kw name="Validate the Registering an Account by entering different password in 'Password' fields.">
-<kw name="Click on 'Register' link" library="resource_registration_functionality">
-<doc>User can click on Registration link which is located on header part of home page
-After clicking on Registration page will open.</doc>
+<test id="s1-t1" name="TC 018" line="111">
+<kw name="Validate Register Account from My Account link on Footer">
+<kw name="Click on My Account link" library="resource_registration_functionality">
+<arg>Register</arg>
+<doc>Clicking my account link available in footer part of home page</doc>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${link_my_account}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20230908 01:33:52.432" level="INFO">Element '//a[normalize-space()='My account']' is displayed.</msg>
+<status status="PASS" starttime="20230908 01:33:50.384" endtime="20230908 01:33:52.432"/>
+</kw>
 <kw name="Click Element" library="SeleniumLibrary">
-<arg>${link_registration}</arg>
+<arg>${link_my_account}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20230905 19:29:46.259" level="INFO">Clicking element '//a[normalize-space()='Register']'.</msg>
-<status status="PASS" starttime="20230905 19:29:46.259" endtime="20230905 19:29:49.801"/>
+<msg timestamp="20230908 01:33:52.432" level="INFO">Clicking element '//a[normalize-space()='My account']'.</msg>
+<status status="PASS" starttime="20230908 01:33:52.432" endtime="20230908 01:33:56.093"/>
 </kw>
-<status status="PASS" starttime="20230905 19:29:46.259" endtime="20230905 19:29:49.801"/>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${btn_register_on_login}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20230908 01:33:58.127" level="INFO">Element '//button[normalize-space()='Register']' is displayed.</msg>
+<status status="PASS" starttime="20230908 01:33:56.093" endtime="20230908 01:33:58.127"/>
 </kw>
-<kw name="Enter Firstname" library="resource_registration_functionality">
-<arg>john</arg>
-<doc>Entering First Name as Elon</doc>
-<kw name="Input Text" library="SeleniumLibrary">
-<arg>${txt_firstname}</arg>
-<arg>${fistname}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20230905 19:29:49.801" level="INFO">Typing text 'john' into text field '//input[@id='FirstName']'.</msg>
-<status status="PASS" starttime="20230905 19:29:49.801" endtime="20230905 19:29:53.140"/>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${btn_register_on_login}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230908 01:33:58.127" level="INFO">Clicking element '//button[normalize-space()='Register']'.</msg>
+<status status="PASS" starttime="20230908 01:33:58.127" endtime="20230908 01:34:00.592"/>
 </kw>
-<status status="PASS" starttime="20230905 19:29:49.801" endtime="20230905 19:29:53.140"/>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<arg>${register_txt}</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<msg timestamp="20230908 01:34:02.615" level="INFO">Current page contains text 'Register'.</msg>
+<status status="PASS" starttime="20230908 01:34:00.592" endtime="20230908 01:34:02.615"/>
 </kw>
-<kw name="Enter Lastname" library="resource_registration_functionality">
-<arg>cena</arg>
-<doc>Entering Lastname as Musk</doc>
-<kw name="Input Text" library="SeleniumLibrary">
-<arg>${txt_lastname}</arg>
-<arg>${lastname}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20230905 19:29:53.140" level="INFO">Typing text 'cena' into text field '//input[@id='LastName']'.</msg>
-<status status="PASS" starttime="20230905 19:29:53.140" endtime="20230905 19:29:56.610"/>
+<status status="PASS" starttime="20230908 01:33:50.383" endtime="20230908 01:34:02.615"/>
 </kw>
-<status status="PASS" starttime="20230905 19:29:53.140" endtime="20230905 19:29:56.610"/>
+<status status="PASS" starttime="20230908 01:33:50.383" endtime="20230908 01:34:02.615"/>
 </kw>
-<kw name="Enter Email" library="resource_registration_functionality">
-<arg>johnce11@gmail.com</arg>
-<doc>Entering Email Address as elonmusk@gmail.com</doc>
-<kw name="Input Text" library="SeleniumLibrary">
-<arg>${txt_email}</arg>
-<arg>${email}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20230905 19:29:56.610" level="INFO">Typing text 'johnce11@gmail.com' into text field '//input[@id='Email']'.</msg>
-<status status="PASS" starttime="20230905 19:29:56.610" endtime="20230905 19:30:00.113"/>
-</kw>
-<status status="PASS" starttime="20230905 19:29:56.610" endtime="20230905 19:30:00.113"/>
-</kw>
-<kw name="Enter Password" library="resource_registration_functionality">
-<arg>john@123</arg>
-<doc>Entering passwords as elon@123</doc>
-<kw name="Input Text" library="SeleniumLibrary">
-<arg>${txt_password}</arg>
-<arg>${password}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20230905 19:30:00.113" level="INFO">Typing text 'john@123' into text field '//input[@id='Password']'.</msg>
-<status status="PASS" starttime="20230905 19:30:00.113" endtime="20230905 19:30:03.547"/>
-</kw>
-<status status="PASS" starttime="20230905 19:30:00.113" endtime="20230905 19:30:03.548"/>
-</kw>
-<kw name="Enter Confirm Password" library="resource_registration_functionality">
-<arg>john@abcdefghij</arg>
-<doc>Entering confirm password as elon@123</doc>
-<kw name="Input Text" library="SeleniumLibrary">
-<arg>${txt_confirm_password}</arg>
-<arg>${confim_password}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20230905 19:30:03.549" level="INFO">Typing text 'john@abcdefghij' into text field '//input[@id='ConfirmPassword']'.</msg>
-<status status="PASS" starttime="20230905 19:30:03.549" endtime="20230905 19:30:06.889"/>
-</kw>
-<status status="PASS" starttime="20230905 19:30:03.549" endtime="20230905 19:30:06.889"/>
-</kw>
-<kw name="Display Warning Message for both Passwords not matched" library="resource_registration_functionality">
-<doc>Varify when user entering password and confirm password field is not same and Error message
-'The password and confirmation password do not match.' should displayed.</doc>
-<kw name="Sleep" library="BuiltIn">
-<arg>2</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20230905 19:30:08.890" level="INFO">Slept 2 seconds</msg>
-<status status="PASS" starttime="20230905 19:30:06.890" endtime="20230905 19:30:08.890"/>
-</kw>
-<kw name="Get Text" library="SeleniumLibrary">
-<var>${txt}</var>
-<arg>${warning_pass_not_matched}</arg>
-<doc>Returns the text value of the element identified by ``locator``.</doc>
-<msg timestamp="20230905 19:30:16.176" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-16.png"&gt;&lt;img src="selenium-screenshot-16.png" width="800px"&gt;&lt;/a&gt;</msg>
-<msg timestamp="20230905 19:30:16.176" level="FAIL">Element with locator '//span[@id='ConfirmPassword-error']' not found.</msg>
-<status status="FAIL" starttime="20230905 19:30:08.890" endtime="20230905 19:30:16.179"/>
-</kw>
-<kw name="Set Variable" library="BuiltIn">
-<var>${exp_txt}</var>
-<arg>The password and confirmation password do not match.</arg>
-<doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="NOT RUN" starttime="20230905 19:30:16.179" endtime="20230905 19:30:16.179"/>
-</kw>
-<kw name="Log" library="BuiltIn">
-<arg>${txt}</arg>
-<doc>Logs the given message with the given level.</doc>
-<status status="NOT RUN" starttime="20230905 19:30:16.179" endtime="20230905 19:30:16.179"/>
-</kw>
-<kw name="Run Keyword If" library="BuiltIn">
-<arg>'${txt}'</arg>
-<arg>==</arg>
-<arg>'${exp_txt}'</arg>
-<arg>log</arg>
-<arg>The password and confirmation password do not match displayed</arg>
-<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
-<status status="NOT RUN" starttime="20230905 19:30:16.179" endtime="20230905 19:30:16.179"/>
-</kw>
-<status status="FAIL" starttime="20230905 19:30:06.890" endtime="20230905 19:30:16.179"/>
-</kw>
-<status status="FAIL" starttime="20230905 19:29:46.252" endtime="20230905 19:30:16.179"/>
-</kw>
-<doc>Validate the Registering an Account by entering different password in 'Password' fields.
-password= elon@123 and confirm password= elon@abc  both password are different so testcase should fail</doc>
+<doc>Valide 'Register Account' functionality from My Account link at footer.</doc>
 <tag>Sanity testing</tag>
-<status status="FAIL" starttime="20230905 19:29:46.250" endtime="20230905 19:30:16.182">Element with locator '//span[@id='ConfirmPassword-error']' not found.</status>
+<status status="PASS" starttime="20230908 01:33:50.379" endtime="20230908 01:34:02.615"/>
 </test>
 <kw name="Close My Browser" library="resource_browsers" type="TEARDOWN">
 <kw name="Close Browser" library="SeleniumLibrary">
 <doc>Closes the current browser.</doc>
-<status status="PASS" starttime="20230905 19:30:16.187" endtime="20230905 19:30:19.398"/>
+<status status="PASS" starttime="20230908 01:34:02.615" endtime="20230908 01:34:05.746"/>
 </kw>
-<status status="PASS" starttime="20230905 19:30:16.187" endtime="20230905 19:30:19.399"/>
+<status status="PASS" starttime="20230908 01:34:02.615" endtime="20230908 01:34:05.746"/>
 </kw>
 <doc>This is Test suite file to execute test cases for Registration Functionality</doc>
-<status status="FAIL" starttime="20230905 19:29:42.169" endtime="20230905 19:30:19.399"/>
+<status status="PASS" starttime="20230908 01:33:46.685" endtime="20230908 01:34:05.746"/>
 </suite>
 <statistics>
 <total>
-<stat pass="0" fail="1" skip="0">All Tests</stat>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
 </total>
 <tag>
-<stat pass="0" fail="1" skip="0">Sanity testing</stat>
+<stat pass="1" fail="0" skip="0">Sanity testing</stat>
 </tag>
 <suite>
-<stat pass="0" fail="1" skip="0" id="s1" name="Test Suite Registration Functionality">Test Suite Registration Functionality</stat>
+<stat pass="1" fail="0" skip="0" id="s1" name="Test Suite Registration Functionality">Test Suite Registration Functionality</stat>
 </suite>
 </statistics>
 <errors>
