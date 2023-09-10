@@ -31,3 +31,12 @@ return_customer_txt="//strong[normalize-space()='Returning Customer']"
 link_wishlist="//span[@class='wishlist-label']"
 link_shoping_cart="//span[@class='cart-label']"
 link_my_account="//a[normalize-space()='My account']"
+
+# Login Functionality
+link_login="//a[normalize-space()='Log in']"
+btn_login="//button[normalize-space()='Log in']"
+warning_invalid_email="//li[normalize-space()='No customer account found']"
+link_forgot_password="//a[normalize-space()='Forgot password?']"
+checkbox_rememberme="//input[@id='RememberMe']"
+already_login="//p[@class='content']"
+link_logout="//a[normalize-space()='Log out']"
