@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.1.1 (Python 3.11.3 on win32)" generated="20230909 23:20:13.479" rpa="false" schemaversion="4">
+<suite id="s1" name="Test Suite 002 Login Functionality" source="D:\files\Nopcommerce\NopCommerce_automation\TestSuits\test_suite_002_login_functionality.robot">
+<kw name="Open Chrome Browser" library="resource_browsers" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${url}</arg>
+<arg>${browser}[0]</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20230909 23:20:13.723" level="INFO">Opening browser 'chrome' to base url 'https://demo.nopcommerce.com/'.</msg>
+<status status="PASS" starttime="20230909 23:20:13.722" endtime="20230909 23:20:17.437"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20230909 23:20:17.437" endtime="20230909 23:20:17.586"/>
+</kw>
+<kw name="Set Selenium Implicit Wait" library="SeleniumLibrary">
+<arg>5s</arg>
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<status status="PASS" starttime="20230909 23:20:17.586" endtime="20230909 23:20:17.589"/>
+</kw>
+<kw name="Set Selenium Speed" library="SeleniumLibrary">
+<arg>1s</arg>
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<status status="PASS" starttime="20230909 23:20:17.589" endtime="20230909 23:20:17.589"/>
+</kw>
+<status status="PASS" starttime="20230909 23:20:13.721" endtime="20230909 23:20:17.589"/>
+</kw>
+<test id="s1-t1" name="TC 010" line="61">
+<kw name="Logout and Browse Back">
+<kw name="Click on Login link" library="resource_login_functionality">
+<doc>User can click on Login link which is located on header part of home page
+login page should be open</doc>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${link_login}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230909 23:20:17.592" level="INFO">Clicking element '//a[normalize-space()='Log in']'.</msg>
+<status status="PASS" starttime="20230909 23:20:17.592" endtime="20230909 23:20:21.196"/>
+</kw>
+<status status="PASS" starttime="20230909 23:20:17.591" endtime="20230909 23:20:21.196"/>
+</kw>
+<kw name="Enter Email" library="resource_login_functionality">
+<arg>maekunde@gmail.com</arg>
+<doc>User can enter there registered email adderess in email field</doc>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${txt_email}</arg>
+<arg>${email}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230909 23:20:21.197" level="INFO">Typing text 'maekunde@gmail.com' into text field '//input[@id='Email']'.</msg>
+<status status="PASS" starttime="20230909 23:20:21.197" endtime="20230909 23:20:24.635"/>
+</kw>
+<status status="PASS" starttime="20230909 23:20:21.197" endtime="20230909 23:20:24.635"/>
+</kw>
+<kw name="Enter Password" library="resource_login_functionality">
+<arg>12345678</arg>
+<doc>User can enter there registered password in password field</doc>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${txt_password}</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230909 23:20:24.635" level="INFO">Typing text '12345678' into text field '//input[@id='Password']'.</msg>
+<status status="PASS" starttime="20230909 23:20:24.635" endtime="20230909 23:20:28.140"/>
+</kw>
+<status status="PASS" starttime="20230909 23:20:24.635" endtime="20230909 23:20:28.140"/>
+</kw>
+<kw name="Click on Login button" library="resource_login_functionality">
+<doc>User can click login button to sign in into application</doc>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${btn_login}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230909 23:20:28.140" level="INFO">Clicking element '//button[normalize-space()='Log in']'.</msg>
+<status status="PASS" starttime="20230909 23:20:28.140" endtime="20230909 23:20:32.236"/>
+</kw>
+<status status="PASS" starttime="20230909 23:20:28.140" endtime="20230909 23:20:32.237"/>
+</kw>
+<kw name="Varify Login page after signin" library="resource_login_functionality">
+<arg>My account</arg>
+<doc>User should successfuly signin into login page and varify user navigated to
+login page</doc>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<arg>${text}</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<msg timestamp="20230909 23:20:34.277" level="INFO">Current page contains text 'My account'.</msg>
+<status status="PASS" starttime="20230909 23:20:32.237" endtime="20230909 23:20:34.277"/>
+</kw>
+<status status="PASS" starttime="20230909 23:20:32.237" endtime="20230909 23:20:34.277"/>
+</kw>
+<kw name="Click on Logout button" library="resource_login_functionality">
+<doc>User can click on logout button</doc>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${link_logout}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230909 23:20:34.278" level="INFO">Clicking element '//a[normalize-space()='Log out']'.</msg>
+<status status="PASS" starttime="20230909 23:20:34.278" endtime="20230909 23:20:37.211"/>
+</kw>
+<status status="PASS" starttime="20230909 23:20:34.277" endtime="20230909 23:20:37.211"/>
+</kw>
+<kw name="Go Back and Varify Login" library="resource_login_functionality">
+<doc>User can click on logout and press go back button from browser
+and user should not sign in</doc>
+<kw name="Go Back" library="SeleniumLibrary">
+<doc>Simulates the user clicking the back button on their browser.</doc>
+<status status="PASS" starttime="20230909 23:20:37.212" endtime="20230909 23:20:38.744"/>
+</kw>
+<kw name="Element Should Not Be Visible" library="SeleniumLibrary">
+<arg>${txt_myaccount}</arg>
+<doc>Verifies that the element identified by ``locator`` is NOT visible.</doc>
+<msg timestamp="20230909 23:20:44.805" level="INFO">Element '//a[@class='ico-account']' did not exist.</msg>
+<status status="PASS" starttime="20230909 23:20:38.744" endtime="20230909 23:20:44.805"/>
+</kw>
+<status status="PASS" starttime="20230909 23:20:37.212" endtime="20230909 23:20:44.806"/>
+</kw>
+<status status="PASS" starttime="20230909 23:20:17.591" endtime="20230909 23:20:44.806"/>
+</kw>
+<doc>Validate Logging out from appliaction and browsing back using Browser
+back button and user should not signin</doc>
+<tag>Smoke testing</tag>
+<status status="PASS" starttime="20230909 23:20:17.590" endtime="20230909 23:20:44.809"/>
+</test>
+<kw name="Close My Browser" library="resource_browsers" type="TEARDOWN">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20230909 23:20:44.834" endtime="20230909 23:20:48.099"/>
+</kw>
+<status status="PASS" starttime="20230909 23:20:44.826" endtime="20230909 23:20:48.099"/>
+</kw>
+<doc>Varify the working of Log in functionality for 'NopCommerce.com'</doc>
+<status status="PASS" starttime="20230909 23:20:13.490" endtime="20230909 23:20:48.099"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="1" fail="0" skip="0">Smoke testing</stat>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Test Suite 002 Login Functionality">Test Suite 002 Login Functionality</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

@@ -1,5 +1,5 @@
 *** Settings ***
-Documentation    This is resource file for Registration Functionality
+Documentation    This is resource file for Registration Functionality for 'NopCommerce.com'
 Library          SeleniumLibrary
 Variables        ../Locators/webelements.py
 
